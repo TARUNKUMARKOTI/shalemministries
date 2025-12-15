@@ -13,7 +13,7 @@ const Events: React.FC = () => {
         <div className="container mx-auto px-6">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6">EVENTS</h1>
           <p className="text-xl text-gray-600 font-light max-w-2xl">
-            Stay up to date with everything happening at 2819 Church.
+            Stay up to date with everything happening at Shalem Ministries.
           </p>
         </div>
       </section>
