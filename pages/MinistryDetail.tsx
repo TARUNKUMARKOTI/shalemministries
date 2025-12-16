@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { MINISTRIES, EMAIL, PHONE } from '../constants';
 import Button from '../components/Button';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
@@ -7,16 +7,22 @@ import { ArrowLeft, CheckCircle } from 'lucide-react';
 const MinistryDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const location = useLocation();
   const ministry = MINISTRIES.find(m => m.id === id);
   const primaryPhone = PHONE.split(',')[0].trim();
   const primaryPhoneTel = primaryPhone.replace(/[^0-9+]/g, '');
+  
+  // Check if user came from ministries page
+  const fromMinistries = (location.state as { from?: string })?.from === '/ministries';
+  const backPath = fromMinistries ? '/ministries' : '/';
+  const backText = fromMinistries ? 'Back to Ministries' : 'Back to Home';
 
   if (!ministry) {
     return (
       <div className="pt-32 pb-20 container mx-auto px-6 text-center animate-fade-in">
         <h1 className="text-4xl font-bold mb-4">Ministry Not Found</h1>
-        <Button onClick={() => navigate('/')} variant="outline">
-          Back Home
+        <Button onClick={() => navigate(backPath)} variant="outline">
+          {backText}
         </Button>
       </div>
     );
@@ -27,11 +33,11 @@ const MinistryDetail: React.FC = () => {
       {/* Back Link */}
       <div className="container mx-auto px-6 py-8">
         <button 
-          onClick={() => navigate('/')} 
+          onClick={() => navigate(backPath)} 
           className="flex items-center text-xs font-bold text-gray-400 hover:text-black transition-colors uppercase tracking-widest group"
         >
           <ArrowLeft size={14} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-          Back to Home
+          {backText}
         </button>
       </div>
 

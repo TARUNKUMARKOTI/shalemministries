@@ -10,9 +10,9 @@ const Events: React.FC = () => {
   return (
     <div className="pt-24 animate-fade-in">
       <section className="py-20 bg-white border-b border-gray-100">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6">EVENTS</h1>
-          <p className="text-xl text-gray-600 font-light max-w-2xl">
+          <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto">
             Stay up to date with everything happening at Shalem Ministries.
           </p>
         </div>

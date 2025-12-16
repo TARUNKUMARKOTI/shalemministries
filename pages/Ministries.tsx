@@ -49,7 +49,7 @@ const Ministries: React.FC = () => {
                   <div className="w-full lg:w-5/12 relative">
                      <div 
                        className="relative aspect-video md:aspect-[3/2] overflow-hidden cursor-pointer bg-gray-100 shadow-sm"
-                       onClick={() => navigate(`/ministries/${ministry.id}`)}
+                       onClick={() => navigate(`/ministries/${ministry.id}`, { state: { from: '/ministries' } })}
                      >
                        <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm text-black text-[10px] font-bold px-3 py-1.5 uppercase tracking-widest shadow-sm">
                          0{index + 1}
@@ -70,7 +70,7 @@ const Ministries: React.FC = () => {
                     
                     <h2 
                       className="text-3xl md:text-5xl font-bold tracking-tighter mb-4 cursor-pointer hover:text-gray-700 transition-colors"
-                      onClick={() => navigate(`/ministries/${ministry.id}`)}
+                      onClick={() => navigate(`/ministries/${ministry.id}`, { state: { from: '/ministries' } })}
                     >
                       {ministry.title}
                     </h2>
@@ -80,7 +80,7 @@ const Ministries: React.FC = () => {
                     </p>
                     
                     <button 
-                      onClick={() => navigate(`/ministries/${ministry.id}`)}
+                      onClick={() => navigate(`/ministries/${ministry.id}`, { state: { from: '/ministries' } })}
                       className="group/btn flex items-center text-xs font-bold tracking-[0.2em] uppercase border-b border-gray-300 pb-2 hover:border-black hover:text-black text-gray-500 transition-all"
                     >
                       Learn More

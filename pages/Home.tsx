@@ -73,8 +73,10 @@ const Home: React.FC = () => {
                 className="bg-white p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 group cursor-pointer hover:-translate-y-1"
                 onClick={() => navigate(`/ministries/${min.id}`)}
               >
-                <div className="mb-6 text-black group-hover:scale-110 transition-transform duration-300">
-                  {min.icon}
+                <div className="mb-6 text-black">
+                  <div className="group-hover:scale-110 transition-transform duration-300 origin-left">
+                    {min.icon}
+                  </div>
                 </div>
                 <h4 className="text-xl font-bold mb-3">{min.title}</h4>
                 <p className="text-gray-500 text-sm leading-relaxed">{min.description}</p>

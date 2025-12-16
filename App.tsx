@@ -9,6 +9,9 @@ import Giving from './pages/Giving';
 import EventDetail from './pages/EventDetail';
 import MinistryDetail from './pages/MinistryDetail';
 import Ministries from './pages/Ministries';
+import TermsAndConditions from './pages/TermsAndConditions';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import RefundPolicy from './pages/RefundPolicy';
 
 // ScrollToTop component to handle scroll position on route change
 const ScrollToTop = () => {
@@ -36,6 +39,9 @@ const App: React.FC = () => {
             <Route path="/events" element={<Events />} />
             <Route path="/events/:id" element={<EventDetail />} />
             <Route path="/giving" element={<Giving />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/refund-policy" element={<RefundPolicy />} />
           </Routes>
         </main>
         <Footer />

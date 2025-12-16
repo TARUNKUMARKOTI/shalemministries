@@ -8,6 +8,11 @@ export const MAP_URL = "https://maps.app.goo.gl/CeWv8VNtKcxdtkZ87?g_st=com.googl
 export const PHONE = "+91 6302-211527, +91 7673-912901";
 export const EMAIL = "shalemministriesinternational@gmail.com";
 
+// Razorpay Configuration
+// TODO: Replace with your actual Razorpay Key ID from Razorpay Dashboard
+// Get your keys from: https://dashboard.razorpay.com/app/keys
+export const RAZORPAY_KEY_ID = import.meta.env.VITE_RAZORPAY_KEY_ID || "rzp_test_1DP5mmOlF5G5ag"; // Test key - replace with your key
+
 export const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/shalemministriesinternational?igsh=MTNkeWI2YnUyMGNoMg==",
   facebook: "https://www.facebook.com/profile.php?id=61584609377018&mibextid=wwXIfr&mibextid=wwXIfr",

@@ -109,20 +109,37 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-xs text-gray-600">&copy; {new Date().getFullYear()} {ORGANIZATION_NAME}. All rights reserved.</p>
+        <div className="border-t border-gray-900 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-6">
+            <p className="text-xs text-gray-600 mb-4 md:mb-0">&copy; {new Date().getFullYear()} {ORGANIZATION_NAME}. All rights reserved.</p>
+            
+            {/* Social Icons Row */}
+            <div className="flex space-x-6">
+               <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors hover:scale-110 transform duration-200">
+                  <Instagram size={20} />
+                </a>
+                <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors hover:scale-110 transform duration-200">
+                  <Facebook size={20} />
+                </a>
+                <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors hover:scale-110 transform duration-200">
+                  <Youtube size={20} />
+                </a>
+            </div>
+          </div>
           
-          {/* Social Icons Row */}
-          <div className="flex space-x-6 mt-6 md:mt-0">
-             <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors hover:scale-110 transform duration-200">
-                <Instagram size={20} />
-              </a>
-              <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors hover:scale-110 transform duration-200">
-                <Facebook size={20} />
-              </a>
-              <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors hover:scale-110 transform duration-200">
-                <Youtube size={20} />
-              </a>
+          {/* Legal Links */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-xs text-gray-500 border-t border-gray-900 pt-6">
+            <Link to="/terms-and-conditions" className="hover:text-white transition-colors">
+              Terms & Conditions
+            </Link>
+            <span className="text-gray-700">•</span>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-gray-700">•</span>
+            <Link to="/refund-policy" className="hover:text-white transition-colors">
+              Refund Policy
+            </Link>
           </div>
         </div>
       </div>
