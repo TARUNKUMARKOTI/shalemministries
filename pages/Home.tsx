@@ -97,7 +97,7 @@ const Home: React.FC = () => {
               <h2 className="text-4xl font-bold tracking-tight mb-2">Happening Soon</h2>
               <p className="text-gray-400">Mark your calendars for what's coming up.</p>
             </div>
-            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-black mt-6 md:mt-0" onClick={() => navigate('/events')}>
+            <Button variant="outline-white" className="mt-6 md:mt-0" onClick={() => navigate('/events')}>
               VIEW ALL EVENTS
             </Button>
           </div>
