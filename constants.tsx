@@ -9,9 +9,8 @@ export const PHONE = "+91 6302-211527, +91 7673-912901";
 export const EMAIL = "shalemministriesinternational@gmail.com";
 
 // Razorpay Configuration
-// TODO: Replace with your actual Razorpay Key ID from Razorpay Dashboard
 // Get your keys from: https://dashboard.razorpay.com/app/keys
-export const RAZORPAY_KEY_ID = import.meta.env.VITE_RAZORPAY_KEY_ID || "rzp_test_1DP5mmOlF5G5ag"; // Test key - replace with your key
+export const RAZORPAY_KEY_ID = import.meta.env.VITE_RAZORPAY_KEY_ID || "rzp_test_RsbdqfFTgRhkQ2"; // Test key
 
 export const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/shalemministriesinternational?igsh=MTNkeWI2YnUyMGNoMg==",
@@ -30,38 +29,38 @@ export const NAV_LINKS: NavLink[] = [
 export const UPCOMING_EVENTS: Event[] = [
   {
     id: '1',
-    title: 'Sunday Service',
-    date: 'Sundays',
-    time: '9:30 AM',
+    title: "Children's Ministry",
+    date: 'Ongoing',
+    time: 'Various Times',
     location: 'Shalem Ministries',
-    description: 'Join us for a powerful time of worship and teaching.',
+    description: 'Programs such as Vacation Bible School (VBS), also helping children learn and study their books in simple and engaging ways. We also distribute books and clothing to support their growth and well-being.',
     imageUrl: 'https://picsum.photos/800/600?grayscale&random=1'
   },
   {
     id: '2',
-    title: 'Midweek Service',
-    date: 'Wednesdays',
-    time: '10:00 AM',
+    title: "Pastors' Ministry",
+    date: 'Ongoing',
+    time: 'Various Times',
     location: 'Shalem Ministries',
-    description: 'A time to come together, seek God’s face, and pray.',
+    description: 'Initiatives focused on encouraging and strengthening pastors through the Word of God, along with distributing clothing and essential support.',
     imageUrl: 'https://picsum.photos/800/600?grayscale&random=2'
   },
   {
     id: '3',
-    title: 'Friday Fellowship',
-    date: 'Fridays',
-    time: '10:00 AM',
+    title: 'Church Ministry',
+    date: 'Ongoing',
+    time: 'Various Times',
     location: 'Shalem Ministries',
-    description: 'Weekly gathering for fellowship and word.',
+    description: 'Partnering with and supporting local churches through practical help, resources, and ministry assistance.',
     imageUrl: 'https://picsum.photos/800/600?grayscale&random=3'
   },
   {
     id: '4',
-    title: 'Saturday Evening',
-    date: 'Saturdays',
-    time: '7:00 PM',
+    title: 'Old Age Ministry',
+    date: 'Ongoing',
+    time: 'Various Times',
     location: 'Shalem Ministries',
-    description: 'Evening worship service.',
+    description: 'Serving elderly individuals by providing medicines and hospital support, with the help of young volunteers who assist and care for them with love and respect.',
     imageUrl: 'https://picsum.photos/800/600?grayscale&random=4'
   }
 ];

@@ -19,6 +19,9 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     // Close menu when route changes
     setIsOpen(false);
+  }, [location]);
+
+  useEffect(() => {
     // Enable/disable body scroll when menu is open
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -28,9 +31,13 @@ const Navbar: React.FC = () => {
     return () => {
        document.body.style.overflow = 'unset';
     };
-  }, [location, isOpen]);
+  }, [isOpen]);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = (e: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsOpen(prev => !prev);
+  };
 
   const navClasses = `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
     scrolled && !isOpen ? 'bg-white/95 backdrop-blur-sm border-b border-gray-100 py-4' : 'bg-transparent py-6'
@@ -68,55 +75,64 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Toggle Button */}
-          <div className="md:hidden z-50">
-            <button 
-              onClick={toggleMenu} 
-              className="text-black focus:outline-none p-2 -mr-2"
-              aria-label="Toggle Menu"
-            >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
+          <button 
+            onClick={toggleMenu} 
+            className="md:hidden z-[60] text-black focus:outline-none p-3 -mr-2 relative cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center"
+            style={{ 
+              WebkitTapHighlightColor: 'transparent',
+              touchAction: 'manipulation',
+              userSelect: 'none',
+              WebkitUserSelect: 'none',
+              zIndex: 60
+            }}
+            aria-label="Toggle Menu"
+            aria-expanded={isOpen}
+            type="button"
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
       </nav>
 
       {/* Mobile Menu Overlay */}
       <div 
-        className={`fixed inset-0 bg-white z-40 md:hidden transition-transform duration-500 ease-[cubic-bezier(0.87,0,0.13,1)] ${
+        className={`fixed inset-0 bg-white z-[45] md:hidden transition-transform duration-500 ease-[cubic-bezier(0.87,0,0.13,1)] ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        } ${isOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
       >
-        <div className="flex flex-col h-full p-8 pt-32 justify-between">
-          
-          {/* Menu Items */}
-          <div className="flex flex-col space-y-6">
-            {NAV_LINKS.map((link, index) => (
-              <RouterNavLink
-                key={link.path}
-                to={link.path}
-                className={({ isActive }) => `
-                  text-4xl font-extrabold tracking-tighter flex items-center justify-between group
-                  ${isActive ? 'text-black' : 'text-gray-300 hover:text-gray-500'}
-                  transition-colors duration-300
-                `}
-                onClick={() => setIsOpen(false)}
-                style={{ transitionDelay: `${index * 50}ms` }}
-              >
-                <span>{link.label}</span>
-                <ArrowRight size={24} className={`transform transition-transform ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`} />
-              </RouterNavLink>
-            ))}
-          </div>
-
-          {/* Bottom Info */}
-          <div className="border-t border-gray-100 pt-8 pb-8">
-            <p className="text-gray-400 text-xs uppercase tracking-widest mb-4 font-bold">Get Connected</p>
-            <div className="flex flex-col space-y-2">
-               <a href="#" className="text-lg font-medium text-black">Instagram</a>
-               <a href="#" className="text-lg font-medium text-black">YouTube</a>
-               <a href="#" className="text-lg font-medium text-black">Facebook</a>
+        <div className="h-full overflow-y-auto pt-20">
+          <div className="flex flex-col min-h-full px-6 py-6">
+            
+            {/* Menu Items */}
+            <div className="flex flex-col space-y-1 mb-8">
+              {NAV_LINKS.map((link, index) => (
+                <RouterNavLink
+                  key={link.path}
+                  to={link.path}
+                  className={({ isActive }) => `
+                    text-lg font-bold tracking-wide flex items-center justify-between group py-3 px-2 rounded-md
+                    ${isActive ? 'text-black bg-gray-50' : 'text-gray-700 hover:text-black hover:bg-gray-50'}
+                    transition-all duration-200
+                  `}
+                  onClick={() => setIsOpen(false)}
+                  style={{ transitionDelay: `${index * 30}ms` }}
+                >
+                  <span className="uppercase">{link.label}</span>
+                  <ArrowRight size={18} className={`transform transition-transform ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'}`} />
+                </RouterNavLink>
+              ))}
             </div>
-            <p className="text-gray-300 text-xs mt-8">© {new Date().getFullYear()} {ORGANIZATION_NAME}</p>
+
+            {/* Bottom Info */}
+            <div className="border-t border-gray-200 pt-6 pb-6 mt-auto">
+              <p className="text-gray-500 text-xs uppercase tracking-widest mb-3 font-semibold">Get Connected</p>
+              <div className="flex flex-col space-y-2">
+                 <a href="#" className="text-base font-medium text-gray-700 hover:text-black transition-colors">Instagram</a>
+                 <a href="#" className="text-base font-medium text-gray-700 hover:text-black transition-colors">YouTube</a>
+                 <a href="#" className="text-base font-medium text-gray-700 hover:text-black transition-colors">Facebook</a>
+              </div>
+              <p className="text-gray-400 text-xs mt-6">© {new Date().getFullYear()} {ORGANIZATION_NAME}</p>
+            </div>
           </div>
         </div>
       </div>

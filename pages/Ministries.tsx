@@ -8,26 +8,12 @@ const Ministries: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="animate-fade-in bg-white">
+    <div className="pt-24 animate-fade-in bg-white">
       {/* Hero Section */}
-      <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden bg-black text-white">
-        <div className="absolute inset-0">
-          <img 
-            src="https://picsum.photos/1920/1080?grayscale&blur=2" 
-            alt="Ministries Background" 
-            className="w-full h-full object-cover opacity-60"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
-        </div>
-        
-        <div className="relative z-10 container mx-auto px-6 text-center mt-12 md:mt-0">
-          <span className="inline-block py-1 px-3 border border-white/30 rounded-full text-[10px] md:text-xs font-bold tracking-[0.2em] mb-4 md:mb-6 backdrop-blur-sm">
-            WHAT WE DO
-          </span>
-          <h1 className="text-4xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter mb-4 md:mb-6">
-            MINISTRIES
-          </h1>
-          <p className="text-base md:text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed px-4">
+      <section className="py-20 bg-white border-b border-gray-100">
+        <div className="container mx-auto px-6 text-center">
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6">MINISTRIES</h1>
+          <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto">
             Extending love, hope, and compassion to every corner of our community.
           </p>
         </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ORGANIZATION_NAME, RAZORPAY_KEY_ID } from '../constants';
-import { ChevronDown, ArrowRight, CreditCard, Lock } from 'lucide-react';
+import { ChevronDown, ArrowRight, CreditCard, Lock, CheckCircle, XCircle, X } from 'lucide-react';
 
 // Razorpay types
 declare global {
@@ -26,6 +26,7 @@ const Giving: React.FC = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [razorpayLoaded, setRazorpayLoaded] = useState(false);
+  const [modal, setModal] = useState<{ type: 'success' | 'failure' | 'error'; message: string } | null>(null);
 
   // Check if Razorpay is loaded
   useEffect(() => {
@@ -107,23 +108,8 @@ const Giving: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Create order on backend (for production, this should be an API call to your backend)
-  // For now, we'll create a mock order ID. In production, call your backend API
-  const createOrder = async (amount: number): Promise<string> => {
-    // TODO: Replace this with actual API call to your backend
-    // Example: const response = await fetch('/api/create-order', { method: 'POST', body: JSON.stringify({ amount }) });
-    // return response.json().orderId;
-    
-    // Mock order creation - In production, this MUST be done on your backend for security
-    return new Promise((resolve) => {
-      // Simulate API call
-      setTimeout(() => {
-        // Generate a mock order ID (in production, this comes from Razorpay API via your backend)
-        const mockOrderId = `order_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-        resolve(mockOrderId);
-      }, 500);
-    });
-  };
+  // Note: For production, order creation should be done on your backend for security
+  // For now, we're letting Razorpay create the order automatically (no order_id needed)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -133,7 +119,7 @@ const Giving: React.FC = () => {
     }
 
     if (!razorpayLoaded) {
-      alert('Payment gateway is loading. Please wait a moment and try again.');
+      setModal({ type: 'error', message: 'Payment gateway is loading. Please wait a moment and try again.' });
       return;
     }
 
@@ -142,16 +128,15 @@ const Giving: React.FC = () => {
     try {
       const amountInPaise = Math.round(parseFloat(amount) * 100); // Convert to paise (smallest currency unit)
       
-      // Create order (in production, this should be done on your backend)
-      const orderId = await createOrder(amountInPaise);
-
+      // Note: For production, create order on backend and pass order_id here
+      // For now, Razorpay will create the order automatically
       const options = {
         key: RAZORPAY_KEY_ID,
         amount: amountInPaise,
         currency: 'INR',
         name: ORGANIZATION_NAME,
         description: `Donation - ${fund}`,
-        order_id: orderId, // This should come from your backend
+        // order_id: orderId, // Uncomment when you have backend order creation
         handler: function (response: any) {
           // Payment successful
           console.log('Payment successful:', response);
@@ -175,7 +160,10 @@ const Giving: React.FC = () => {
           // });
 
           // Show success message
-          alert(`Thank you for your donation of ₹${amount}! Your contribution helps us continue our mission. A receipt has been sent to ${email}.`);
+          setModal({ 
+            type: 'success', 
+            message: `Thank you for your donation of ₹${amount}! Your contribution helps us continue our mission.` 
+          });
           
           // Reset form
           setAmount('');
@@ -211,14 +199,20 @@ const Giving: React.FC = () => {
       razorpay.on('payment.failed', function (response: any) {
         // Payment failed
         console.error('Payment failed:', response.error);
-        alert(`Payment failed: ${response.error.description || 'Please try again or contact us for assistance.'}`);
+        setModal({ 
+          type: 'failure', 
+          message: `Payment failed: ${response.error.description || 'Please try again or contact us for assistance.'}` 
+        });
         setIsSubmitting(false);
       });
 
       razorpay.open();
     } catch (error) {
       console.error('Error initiating payment:', error);
-      alert('An error occurred while processing your payment. Please try again or contact us for assistance.');
+      setModal({ 
+        type: 'error', 
+        message: 'An error occurred while processing your payment. Please try again or contact us for assistance.' 
+      });
       setIsSubmitting(false);
     }
   };
@@ -394,6 +388,62 @@ const Giving: React.FC = () => {
         <p className="mt-2">&copy; {new Date().getFullYear()} {ORGANIZATION_NAME}</p>
       </div>
 
+      {/* Modal */}
+      {modal && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in"
+          onClick={() => setModal(null)}
+        >
+          <div 
+            className="bg-white rounded-xl shadow-2xl max-w-md w-full p-8 relative animate-fade-in border border-gray-100"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setModal(null)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-black transition-colors"
+            >
+              <X size={20} />
+            </button>
+
+            {/* Icon and Content */}
+            <div className="text-center">
+              {modal.type === 'success' ? (
+                <div className="mb-6 flex justify-center">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                    <CheckCircle size={32} className="text-green-600" />
+                  </div>
+                </div>
+              ) : (
+                <div className="mb-6 flex justify-center">
+                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
+                    <XCircle size={32} className="text-red-600" />
+                  </div>
+                </div>
+              )}
+
+              <h3 className={`text-2xl font-bold mb-4 ${modal.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
+                {modal.type === 'success' ? 'Payment Successful!' : modal.type === 'failure' ? 'Payment Failed' : 'Error'}
+              </h3>
+              
+              <p className="text-gray-600 leading-relaxed mb-6">
+                {modal.message}
+              </p>
+
+              <button
+                onClick={() => setModal(null)}
+                className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors ${
+                  modal.type === 'success' 
+                    ? 'bg-green-600 text-white hover:bg-green-700' 
+                    : 'bg-red-600 text-white hover:bg-red-700'
+                }`}
+              >
+                {modal.type === 'success' ? 'Continue' : 'Close'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -14,7 +14,7 @@ const Home: React.FC = () => {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://picsum.photos/1920/1080?grayscale" 
+            src="/images/hero.jpeg" 
             alt="Church Gathering" 
             className="w-full h-full object-cover"
           />

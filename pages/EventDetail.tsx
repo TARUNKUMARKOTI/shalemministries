@@ -60,14 +60,14 @@ const EventDetail: React.FC = () => {
               <div className="prose prose-lg text-gray-600 mb-8 max-w-none">
                 <p className="lead text-xl text-black font-medium mb-6">{event.description}</p>
                 <p>
-                  At Shalem Ministries, we gather with hearts open to God's presence and His Word. Our services are designed to be a time of authentic worship, where the Holy Spirit moves freely, and where the Bible is taught with clarity and passion. We believe that when God's people come together in unity, something powerful happens.
+                  At Shalem Ministries, we are committed to serving our community with love, compassion, and the love of Christ. Through our various ministries, we aim to make a tangible difference in the lives of those we serve, sharing God's love through practical acts of service and support.
                 </p>
                 <p className="mt-4">
-                  Every service is an opportunity to encounter God in a fresh way, to be encouraged in your faith journey, and to connect with a community that genuinely cares. Whether you're seeking answers, looking for hope, or desiring to grow deeper in your relationship with Christ, you'll find a place where you belong.
+                  We believe that ministry extends beyond the walls of the church, reaching into every area of need. Whether through education, support, resources, or care, we are dedicated to being the hands and feet of Jesus in our community.
                 </p>
-                <h3 className="text-2xl font-bold text-black mt-8 mb-4">What to Expect</h3>
+                <h3 className="text-2xl font-bold text-black mt-8 mb-4">Get Involved</h3>
                 <p>
-                  We believe that church should be a place where you can experience God's presence. Whether you are new to faith or have been a believer for years, you will find a welcoming community here. Come as you are, and expect to be met with genuine love, powerful worship, and life-changing teaching from God's Word.
+                  If you're interested in learning more about this ministry or would like to get involved, we welcome your participation. Together, we can make a greater impact and serve our community with excellence and love.
                 </p>
               </div>
               
