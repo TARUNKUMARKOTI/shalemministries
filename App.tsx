@@ -12,6 +12,7 @@ import Ministries from './pages/Ministries';
 import TermsAndConditions from './pages/TermsAndConditions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import RefundPolicy from './pages/RefundPolicy';
+import NotFound from './pages/NotFound';
 
 // ScrollToTop component to handle scroll position on route change
 const ScrollToTop = () => {
@@ -42,6 +43,7 @@ const App: React.FC = () => {
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/refund-policy" element={<RefundPolicy />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
