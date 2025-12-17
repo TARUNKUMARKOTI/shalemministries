@@ -9,6 +9,37 @@ const EventDetail: React.FC = () => {
   const navigate = useNavigate();
   const event = UPCOMING_EVENTS.find(e => e.id === id);
 
+  const handleShare = async () => {
+    const url = window.location.href;
+    const shareData = {
+      title: event?.title || 'Event',
+      text: event?.description || '',
+      url: url,
+    };
+
+    try {
+      // Check if Web Share API is available (mobile devices)
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        // Fallback: Copy to clipboard
+        await navigator.clipboard.writeText(url);
+        alert('Event link copied to clipboard!');
+      }
+    } catch (error) {
+      // User cancelled or error occurred
+      if (error instanceof Error && error.name !== 'AbortError') {
+        // Fallback: Copy to clipboard if share fails
+        try {
+          await navigator.clipboard.writeText(url);
+          alert('Event link copied to clipboard!');
+        } catch (clipboardError) {
+          console.error('Failed to copy to clipboard:', clipboardError);
+        }
+      }
+    }
+  };
+
   if (!event) {
     return (
       <div className="pt-32 pb-20 container mx-auto px-6 text-center animate-fade-in">
@@ -74,7 +105,11 @@ const EventDetail: React.FC = () => {
               <div className="pt-8 border-t border-gray-100 mt-12">
                  <h3 className="text-sm font-bold uppercase tracking-widest mb-4">Share Event</h3>
                  <div className="flex justify-center lg:justify-start space-x-4">
-                    <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-colors">
+                    <button 
+                      onClick={handleShare}
+                      className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-colors cursor-pointer"
+                      aria-label="Share event"
+                    >
                       <Share2 size={16} />
                     </button>
                  </div>

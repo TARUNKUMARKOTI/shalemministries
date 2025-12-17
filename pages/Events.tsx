@@ -9,7 +9,7 @@ const Events: React.FC = () => {
 
   return (
     <div className="pt-24 animate-fade-in">
-      <section className="py-20 bg-white border-b border-gray-100">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6">EVENTS</h1>
           <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto">
@@ -27,7 +27,7 @@ const Events: React.FC = () => {
                   <img 
                     src={event.imageUrl} 
                     alt={event.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale"
+                    className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
                   />
                 </div>
                 <div className="p-8 md:p-12 md:w-3/5 flex flex-col justify-center text-center md:text-left">

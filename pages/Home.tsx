@@ -10,7 +10,7 @@ const Home: React.FC = () => {
   return (
     <div className="animate-fade-in">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center md:items-center justify-center overflow-hidden pt-8 md:pt-0">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -24,7 +24,7 @@ const Home: React.FC = () => {
 
         {/* Content */}
         <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 leading-tight">
+          <h1 className="text-3xl md:text-7xl font-extrabold tracking-tighter mb-6 leading-tight">
             LOVE GOD.<br/>LOVE PEOPLE.<br/>MAKE DISCIPLES.
           </h1>
           <p className="text-lg md:text-xl font-light mb-10 tracking-wide opacity-90">
@@ -45,7 +45,7 @@ const Home: React.FC = () => {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 text-center max-w-3xl">
           <h2 className="text-sm font-bold tracking-widest uppercase mb-4 text-gray-500">Who We Are</h2>
-          <h3 className="text-3xl md:text-5xl font-bold text-black mb-8 tracking-tight">
+          <h3 className="text-2xl md:text-4xl font-bold text-black mb-8 tracking-tight">
             We are a church that believes in the transformative power of the Gospel.
           </h3>
           <p className="text-gray-600 leading-relaxed text-lg mb-10">
@@ -113,7 +113,7 @@ const Home: React.FC = () => {
                   <img 
                     src={evt.imageUrl} 
                     alt={evt.title} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
                   />
                 </div>
                 <div className="flex flex-col">

@@ -34,7 +34,7 @@ export const UPCOMING_EVENTS: Event[] = [
     time: 'Various Times',
     location: 'Shalem Ministries',
     description: 'Programs such as Vacation Bible School (VBS), also helping children learn and study their books in simple and engaging ways. We also distribute books and clothing to support their growth and well-being.',
-    imageUrl: 'https://picsum.photos/800/600?grayscale&random=1'
+    imageUrl: '/images/ChildrenMinistry.jpeg'
   },
   {
     id: '2',
@@ -43,7 +43,7 @@ export const UPCOMING_EVENTS: Event[] = [
     time: 'Various Times',
     location: 'Shalem Ministries',
     description: 'Initiatives focused on encouraging and strengthening pastors through the Word of God, along with distributing clothing and essential support.',
-    imageUrl: 'https://picsum.photos/800/600?grayscale&random=2'
+    imageUrl: '/images/PastorMinistry.jpeg'
   },
   {
     id: '3',
@@ -52,7 +52,7 @@ export const UPCOMING_EVENTS: Event[] = [
     time: 'Various Times',
     location: 'Shalem Ministries',
     description: 'Partnering with and supporting local churches through practical help, resources, and ministry assistance.',
-    imageUrl: 'https://picsum.photos/800/600?grayscale&random=3'
+    imageUrl: '/images/ChurchMinistry.jpeg'
   },
   {
     id: '4',
@@ -61,7 +61,7 @@ export const UPCOMING_EVENTS: Event[] = [
     time: 'Various Times',
     location: 'Shalem Ministries',
     description: 'Serving elderly individuals by providing medicines and hospital support, with the help of young volunteers who assist and care for them with love and respect.',
-    imageUrl: 'https://picsum.photos/800/600?grayscale&random=4'
+    imageUrl: '/images/OrphanageHome.jpeg'
   }
 ];
 
@@ -71,7 +71,7 @@ export const MINISTRIES: Ministry[] = [
     title: "Church Ministry",
     description: "A spiritual family dedicated to worship, biblical teaching, and discipleship.",
     longDescription: "Our Church Ministry is the heartbeat of Shalem Ministries. We are a community devoted to following Jesus, where every service is an opportunity to encounter God's presence. Through passionate worship, in-depth biblical teaching, and fellowship, we aim to equip believers to live out their faith authentically. Whether you are new to the faith or a long-time believer, there is a place for you here to grow and serve.",
-    imageUrl: "https://picsum.photos/800/600?grayscale&random=20",
+    imageUrl: "/images/ChurchMinistry2.jpeg",
     icon: <Users className="w-6 h-6" />
   },
   {
@@ -79,7 +79,7 @@ export const MINISTRIES: Ministry[] = [
     title: "Orphanage Home",
     description: "Providing a loving home, education, and hope to destitute children.",
     longDescription: "The Shalem Orphanage Home is a sanctuary for children who have lost their parents or are in desperate need of care. We believe every child deserves a safe environment, nutritious food, quality education, and the love of a family. Our mission is not just to provide shelter, but to raise these children with dignity and hope, empowering them to build a bright future through the love of Christ.",
-    imageUrl: "https://picsum.photos/800/600?grayscale&random=21",
+    imageUrl: "/images/OrphanageHome.jpeg",
     icon: <Home className="w-6 h-6" />
   },
   {
@@ -87,7 +87,7 @@ export const MINISTRIES: Ministry[] = [
     title: "Children's Ministry",
     description: "Nurturing the next generation in the way of the Lord through fun and faith.",
     longDescription: "Our Children's Ministry partners with parents to lead children to become fully devoted followers of Christ. We create safe, fun, and engaging environments where kids can learn biblical truths at their level. From Sunday school to special camps, we are committed to laying a strong spiritual foundation for the next generation.",
-    imageUrl: "https://picsum.photos/800/600?grayscale&random=22",
+    imageUrl: "/images/ChildrenMinistry2.jpeg",
     icon: <Heart className="w-6 h-6" />
   },
   {
@@ -95,7 +95,7 @@ export const MINISTRIES: Ministry[] = [
     title: "Global Outreach",
     description: "Taking the gospel and humanitarian aid beyond our four walls.",
     longDescription: "We are committed to the Great Commission. Our outreach programs extend locally and globally, providing aid to the needy, supporting missionaries, and sharing the message of salvation. We believe in being the hands and feet of Jesus to a hurting world.",
-    imageUrl: "https://picsum.photos/800/600?grayscale&random=23",
+    imageUrl: "/images/GlobalOutReach.jpeg",
     icon: <Globe className="w-6 h-6" />
   }
 ];

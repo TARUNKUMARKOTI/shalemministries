@@ -18,15 +18,30 @@ const Footer: React.FC = () => {
               We are a community devoted to following Jesus, loving our neighbors, and making disciples of all nations.
             </p>
             {/* Social Icons */}
-            <div className="flex space-x-6 pt-2">
-              <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors hover:scale-110 transform duration-200">
-                <Instagram size={20} />
+            <div className="flex space-x-4 pt-2">
+              <a 
+                href={SOCIAL_LINKS.instagram} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-900 hover:bg-white text-gray-400 hover:text-black transition-all duration-300 hover:scale-110 border border-gray-800 hover:border-white"
+              >
+                <Instagram size={18} />
               </a>
-              <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors hover:scale-110 transform duration-200">
-                <Facebook size={20} />
+              <a 
+                href={SOCIAL_LINKS.facebook} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-900 hover:bg-white text-gray-400 hover:text-black transition-all duration-300 hover:scale-110 border border-gray-800 hover:border-white"
+              >
+                <Facebook size={18} />
               </a>
-              <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors hover:scale-110 transform duration-200">
-                <Youtube size={20} />
+              <a 
+                href={SOCIAL_LINKS.youtube} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-900 hover:bg-white text-gray-400 hover:text-black transition-all duration-300 hover:scale-110 border border-gray-800 hover:border-white"
+              >
+                <Youtube size={18} />
               </a>
             </div>
           </div>
@@ -83,9 +98,12 @@ const Footer: React.FC = () => {
                 <div className="bg-gray-900 group-hover:bg-white group-hover:text-black p-2 rounded-md transition-colors duration-300 mt-1">
                    <MapPin size={16} />
                 </div>
-                <div className="text-sm mt-2 flex items-center">
-                  <span>{ADDRESS}</span>
-                  <ArrowUpRight size={14} className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity translate-y-1 group-hover:translate-y-0 duration-300" />
+                <div className="text-sm mt-2 flex flex-col">
+                  <span className="font-medium text-white mb-1">Yernagdem</span>
+                  <span className="flex items-center">
+                    {ADDRESS}
+                    <ArrowUpRight size={14} className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity translate-y-1 group-hover:translate-y-0 duration-300" />
+                  </span>
                 </div>
               </a>
 
