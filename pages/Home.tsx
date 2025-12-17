@@ -2,10 +2,17 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
 import { MINISTRIES, UPCOMING_EVENTS, ORGANIZATION_NAME, SOCIAL_LINKS } from '../constants';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
+
+  const scrollToNext = () => {
+    const nextSection = document.getElementById('welcome-section');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="animate-fade-in">
@@ -40,10 +47,19 @@ const Home: React.FC = () => {
             </Button>
           </div>
         </div>
+
+        {/* Floating Down Arrow */}
+        <button
+          onClick={scrollToNext}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-white hover:text-gray-200 transition-colors animate-bounce"
+          aria-label="Scroll down"
+        >
+          <ChevronDown size={32} className="drop-shadow-lg" />
+        </button>
       </section>
 
       {/* Welcome / Brief About */}
-      <section className="py-24 bg-white">
+      <section id="welcome-section" className="py-24 bg-white">
         <div className="container mx-auto px-6 text-center max-w-3xl">
           <h2 className="text-sm font-bold tracking-widest uppercase mb-4 text-gray-500">Who We Are</h2>
           <h3 className="text-2xl md:text-4xl font-bold text-black mb-8 tracking-tight">
