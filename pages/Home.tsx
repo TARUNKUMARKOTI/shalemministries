@@ -92,7 +92,7 @@ const Home: React.FC = () => {
       {/* Upcoming Events Teaser */}
       <section className="py-24 bg-black text-white">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 text-center md:text-left">
             <div>
               <h2 className="text-4xl font-bold tracking-tight mb-2">Happening Soon</h2>
               <p className="text-gray-400">Mark your calendars for what's coming up.</p>

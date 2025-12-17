@@ -16,12 +16,24 @@ const About: React.FC = () => {
 
       {/* What We Are */}
       <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6">What is Shalem Ministries?</h2>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Shalem Ministries is a faith-based organization dedicated to serving communities through various ministries that address the physical, spiritual, and emotional needs of people across all ages and walks of life.
-            </p>
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <img 
+                src="/images/logo1.jpeg" 
+                alt="Shalem Ministries Logo" 
+                className="w-48 md:w-64 h-auto object-contain"
+              />
+            </div>
+            
+            {/* Content */}
+            <div className="flex-1 text-center md:text-left">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6">What is Shalem Ministries?</h2>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Shalem Ministries is a faith-based organization dedicated to serving communities through various ministries that address the physical, spiritual, and emotional needs of people across all ages and walks of life.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -37,35 +49,35 @@ const About: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white p-8 border border-gray-100">
+            <div className="bg-white p-8 border border-gray-100 text-center md:text-left">
               <h3 className="text-2xl font-bold mb-4">Children's Ministry</h3>
               <p className="text-gray-600 leading-relaxed">
                 We conduct programs like Vacation Bible School (VBS) and help children learn and study their books in simple and engaging ways. We also distribute books and clothing to support their growth and well-being.
               </p>
             </div>
 
-            <div className="bg-white p-8 border border-gray-100">
+            <div className="bg-white p-8 border border-gray-100 text-center md:text-left">
               <h3 className="text-2xl font-bold mb-4">Pastors' Ministry</h3>
               <p className="text-gray-600 leading-relaxed">
                 We focus on encouraging and strengthening pastors through the Word of God, along with distributing clothing and essential support to help them in their ministry work.
               </p>
             </div>
 
-            <div className="bg-white p-8 border border-gray-100">
+            <div className="bg-white p-8 border border-gray-100 text-center md:text-left">
               <h3 className="text-2xl font-bold mb-4">Church Ministry</h3>
               <p className="text-gray-600 leading-relaxed">
                 We partner with and support local churches through practical help, resources, and ministry assistance to strengthen the body of Christ.
               </p>
             </div>
 
-            <div className="bg-white p-8 border border-gray-100">
+            <div className="bg-white p-8 border border-gray-100 text-center md:text-left">
               <h3 className="text-2xl font-bold mb-4">Old Age Ministry</h3>
               <p className="text-gray-600 leading-relaxed">
                 We serve elderly individuals by providing medicines and hospital support, with the help of young volunteers who assist and care for them with love and respect.
               </p>
             </div>
 
-            <div className="bg-white p-8 border border-gray-100 md:col-span-2">
+            <div className="bg-white p-8 border border-gray-100 md:col-span-2 text-center md:text-left">
               <h3 className="text-2xl font-bold mb-4">Orphanage Home</h3>
               <p className="text-gray-600 leading-relaxed">
                 We provide a loving home, education, and hope to destitute children. Our orphanage is a sanctuary for children who have lost their parents or are in desperate need of care, offering them a safe environment, nutritious food, quality education, and the love of a family.
@@ -79,7 +91,7 @@ const About: React.FC = () => {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
-            <div>
+            <div className="text-center lg:text-left">
               <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
               <p className="text-gray-600 leading-relaxed text-lg mb-6">
                 Based on Matthew 28:19, "Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit."
@@ -89,7 +101,7 @@ const About: React.FC = () => {
               </p>
             </div>
             
-            <div>
+            <div className="text-center lg:text-left">
               <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
               <p className="text-gray-600 leading-relaxed text-lg mb-6">
                 To be a ministry organization known for its compassion, generosity, and unwavering commitment to serving others in the name of Christ.
@@ -170,18 +182,34 @@ const About: React.FC = () => {
 
       {/* Contact Section */}
       <section className="py-24 bg-white border-t border-gray-100">
-        <div className="container mx-auto px-6 text-center max-w-3xl">
+        <div className="container mx-auto px-6 text-center max-w-3xl overflow-hidden">
           <h2 className="text-4xl font-bold tracking-tighter mb-6">Get in Touch</h2>
           <p className="text-lg text-gray-600 mb-8 leading-relaxed">
             We'd love to hear from you. Whether you want to learn more about our ministries, get involved, or need support, we're here to help.
           </p>
           <div className="space-y-4 text-gray-600">
-            <p className="text-lg">
-              <strong className="text-black">Email:</strong> {EMAIL}
+            <p className="text-base md:text-lg break-words">
+              <strong className="text-black">Email:</strong>{' '}
+              <a href={`mailto:${EMAIL}`} className="break-all text-blue-600 hover:underline">
+                {EMAIL}
+              </a>
             </p>
-            <p className="text-lg">
-              <strong className="text-black">Phone:</strong> {PHONE}
-            </p>
+            <div className="text-base md:text-lg break-words">
+              <strong className="text-black">Phone:</strong>
+              <div className="mt-2 space-y-2">
+                {PHONE.split(',').map((phone, index) => {
+                  const trimmedPhone = phone.trim();
+                  const phoneTel = trimmedPhone.replace(/[^0-9+]/g, '');
+                  return (
+                    <p key={index}>
+                      <a href={`tel:${phoneTel}`} className="break-all text-blue-600 hover:underline block">
+                        {trimmedPhone}
+                      </a>
+                    </p>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -30,8 +30,8 @@ const Events: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale"
                   />
                 </div>
-                <div className="p-8 md:p-12 md:w-3/5 flex flex-col justify-center">
-                  <div className="flex items-center space-x-4 mb-4 text-xs font-bold tracking-widest text-gray-400 uppercase">
+                <div className="p-8 md:p-12 md:w-3/5 flex flex-col justify-center text-center md:text-left">
+                  <div className="flex items-center justify-center md:justify-start space-x-4 mb-4 text-xs font-bold tracking-widest text-gray-400 uppercase">
                     <div className="flex items-center"><CalendarIcon size={14} className="mr-2"/> {event.date}</div>
                     <div className="flex items-center"><Clock size={14} className="mr-2"/> {event.time}</div>
                   </div>
@@ -41,7 +41,7 @@ const Events: React.FC = () => {
                     {event.description}
                   </p>
                   
-                  <div className="flex items-center justify-between mt-auto">
+                  <div className="flex flex-col md:flex-row items-center md:items-center justify-center md:justify-between gap-4 md:gap-0 mt-auto">
                     <div className="flex items-center text-sm text-gray-500 font-medium">
                       <MapPin size={16} className="mr-2" />
                       {event.location}

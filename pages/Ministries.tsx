@@ -49,7 +49,7 @@ const Ministries: React.FC = () => {
                   </div>
 
                   {/* Content Container */}
-                  <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
+                  <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
                     <div className="mb-4 md:mb-6 opacity-60 group-hover:opacity-100 transition-opacity duration-500 text-black hidden md:block">
                       {ministry.icon && React.cloneElement(ministry.icon as React.ReactElement, { size: 40, strokeWidth: 1 })}
                     </div>

@@ -48,8 +48,8 @@ const EventDetail: React.FC = () => {
           <div className="flex flex-col lg:flex-row gap-16">
             
             {/* Main Content */}
-            <div className="flex-1">
-              <div className="flex items-center space-x-4 mb-6 text-xs font-bold tracking-widest text-black uppercase">
+            <div className="flex-1 text-center lg:text-left">
+              <div className="flex items-center justify-center lg:justify-start space-x-4 mb-6 text-xs font-bold tracking-widest text-black uppercase">
                  <span className="bg-black text-white px-3 py-1">{event.date}</span>
               </div>
               
@@ -73,7 +73,7 @@ const EventDetail: React.FC = () => {
               
               <div className="pt-8 border-t border-gray-100 mt-12">
                  <h3 className="text-sm font-bold uppercase tracking-widest mb-4">Share Event</h3>
-                 <div className="flex space-x-4">
+                 <div className="flex justify-center lg:justify-start space-x-4">
                     <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-colors">
                       <Share2 size={16} />
                     </button>

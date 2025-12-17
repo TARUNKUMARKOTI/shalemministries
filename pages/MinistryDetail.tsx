@@ -57,7 +57,7 @@ const MinistryDetail: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           
           {/* Main Content */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 text-center lg:text-left">
             <h2 className="text-3xl font-bold mb-6">About this Ministry</h2>
             <div className="prose prose-lg text-gray-600 mb-8">
               <p className="lead text-xl text-black font-medium mb-6">{ministry.description}</p>
@@ -72,15 +72,15 @@ const MinistryDetail: React.FC = () => {
             <div className="mt-12 p-8 bg-gray-50 border border-gray-100 rounded-lg">
                 <h3 className="text-xl font-bold mb-4">Why Join?</h3>
                 <ul className="space-y-3">
-                    <li className="flex items-start">
+                    <li className="flex items-start justify-center lg:justify-start">
                         <CheckCircle className="w-5 h-5 text-black mr-3 mt-1 shrink-0" />
                         <span className="text-gray-600">Grow deeper in your relationship with God.</span>
                     </li>
-                    <li className="flex items-start">
+                    <li className="flex items-start justify-center lg:justify-start">
                         <CheckCircle className="w-5 h-5 text-black mr-3 mt-1 shrink-0" />
                         <span className="text-gray-600">Build lasting friendships with like-minded people.</span>
                     </li>
-                    <li className="flex items-start">
+                    <li className="flex items-start justify-center lg:justify-start">
                         <CheckCircle className="w-5 h-5 text-black mr-3 mt-1 shrink-0" />
                         <span className="text-gray-600">Serve the community and make a tangible difference.</span>
                     </li>
@@ -90,7 +90,7 @@ const MinistryDetail: React.FC = () => {
 
           {/* Sidebar */}
           <div className="lg:col-span-1 space-y-8">
-             <div className="bg-black text-white p-8 rounded-lg shadow-xl">
+             <div className="bg-black text-white p-8 rounded-lg shadow-xl text-center lg:text-left">
                 <h3 className="text-xl font-bold mb-4">Get Involved</h3>
                 <p className="text-gray-300 text-sm mb-6">
                     Ready to take the next step? We would love to have you join us.
@@ -101,7 +101,7 @@ const MinistryDetail: React.FC = () => {
                 </div>
              </div>
 
-             <div className="border border-gray-200 p-8 rounded-lg">
+             <div className="border border-gray-200 p-8 rounded-lg text-center lg:text-left">
                 <h4 className="font-bold mb-2">Have Questions?</h4>
                 <p className="text-gray-500 text-sm mb-4">
                     If you have any questions about the {ministry.title} ministry, feel free to reach out.
