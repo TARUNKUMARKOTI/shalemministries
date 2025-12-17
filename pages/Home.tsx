@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
-import { MINISTRIES, UPCOMING_EVENTS, ORGANIZATION_NAME } from '../constants';
+import { MINISTRIES, UPCOMING_EVENTS, ORGANIZATION_NAME, SOCIAL_LINKS } from '../constants';
 import { ArrowRight } from 'lucide-react';
 
 const Home: React.FC = () => {
@@ -30,11 +30,12 @@ const Home: React.FC = () => {
           <p className="text-lg md:text-xl font-light mb-10 tracking-wide opacity-90">
             Welcome to a community where you belong. Join us this Sunday.
           </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <Button variant="primary" className="bg-white text-black hover:bg-gray-200 border-none">
-              PLAN A VISIT
-            </Button>
-            <Button variant="outline-white">
+          <div className="flex justify-center">
+            <Button 
+              variant="outline-white"
+              className="px-10 py-4 text-base font-bold tracking-wider border-2 hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-xl"
+              onClick={() => window.open(SOCIAL_LINKS.youtube, '_blank', 'noopener,noreferrer')}
+            >
               WATCH ONLINE
             </Button>
           </div>
