@@ -12,6 +12,10 @@ export default defineConfig(({ mode }) => {
       preview: {
         port: 3000,
       },
+      build: {
+        outDir: 'dist',
+        assetsDir: 'assets',
+      },
       plugins: [react()],
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),

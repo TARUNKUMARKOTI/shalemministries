@@ -69,7 +69,7 @@ const EventDetail: React.FC = () => {
         <img 
           src={event.imageUrl} 
           alt={event.title} 
-          className="w-full h-full object-cover grayscale"
+          className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/20" />
       </div>

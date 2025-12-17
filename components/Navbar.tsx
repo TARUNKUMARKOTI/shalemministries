@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink as RouterNavLink, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
-import { NAV_LINKS, ORGANIZATION_NAME } from '../constants';
+import { NAV_LINKS, ORGANIZATION_NAME, SOCIAL_LINKS } from '../constants';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -127,9 +127,33 @@ const Navbar: React.FC = () => {
             <div className="border-t border-gray-200 pt-6 pb-6 mt-auto">
               <p className="text-gray-500 text-xs uppercase tracking-widest mb-3 font-semibold">Get Connected</p>
               <div className="flex flex-col space-y-2">
-                 <a href="#" className="text-base font-medium text-gray-700 hover:text-black transition-colors">Instagram</a>
-                 <a href="#" className="text-base font-medium text-gray-700 hover:text-black transition-colors">YouTube</a>
-                 <a href="#" className="text-base font-medium text-gray-700 hover:text-black transition-colors">Facebook</a>
+                 <a 
+                   href={SOCIAL_LINKS.instagram} 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="text-base font-medium text-gray-700 hover:text-black transition-colors"
+                   onClick={() => setIsOpen(false)}
+                 >
+                   Instagram
+                 </a>
+                 <a 
+                   href={SOCIAL_LINKS.youtube} 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="text-base font-medium text-gray-700 hover:text-black transition-colors"
+                   onClick={() => setIsOpen(false)}
+                 >
+                   YouTube
+                 </a>
+                 <a 
+                   href={SOCIAL_LINKS.facebook} 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className="text-base font-medium text-gray-700 hover:text-black transition-colors"
+                   onClick={() => setIsOpen(false)}
+                 >
+                   Facebook
+                 </a>
               </div>
               <p className="text-gray-400 text-xs mt-6">© {new Date().getFullYear()} {ORGANIZATION_NAME}</p>
             </div>

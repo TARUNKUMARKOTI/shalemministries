@@ -46,10 +46,10 @@ const MinistryDetail: React.FC = () => {
         <img 
           src={ministry.imageUrl} 
           alt={ministry.title} 
-          className="w-full h-full object-cover grayscale"
+          className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-white">{ministry.title.toUpperCase()}</h1>
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-white text-center px-4">{ministry.title.toUpperCase()}</h1>
         </div>
       </div>
 
