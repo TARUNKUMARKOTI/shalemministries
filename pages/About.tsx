@@ -117,17 +117,17 @@ const About: React.FC = () => {
       <section className="py-24 bg-white dark:bg-black transition-colors duration-200">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
-            <div className="text-center lg:text-left p-8 rounded-lg group hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 hover:shadow-lg cursor-pointer">
+            <div className="text-center lg:text-left p-8 rounded-lg group hover:bg-gray-50 dark:hover:bg-gray-900 dark:hover:border dark:hover:border-gray-800 transition-all duration-300 hover:shadow-lg dark:hover:shadow-gray-900/50 cursor-pointer border border-transparent dark:border-gray-900">
               <h2 className="text-3xl font-bold mb-4 text-black dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">Our Mission</h2>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg mb-6">
                 Based on Matthew 28:19, "Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit."
               </p>
-              <p className="text-gray-600 leading-relaxed text-lg">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
                 We exist to serve communities with the love of Christ, meeting both spiritual and practical needs. Through our various ministries, we aim to make disciples, care for the vulnerable, and support those who serve God's people.
               </p>
             </div>
             
-            <div className="text-center lg:text-left p-8 rounded-lg group hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 hover:shadow-lg cursor-pointer">
+            <div className="text-center lg:text-left p-8 rounded-lg group hover:bg-gray-50 dark:hover:bg-gray-900 dark:hover:border dark:hover:border-gray-800 transition-all duration-300 hover:shadow-lg dark:hover:shadow-gray-900/50 cursor-pointer border border-transparent dark:border-gray-900">
               <h2 className="text-3xl font-bold mb-4 text-black dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">Our Vision</h2>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg mb-6">
                 To be a ministry organization known for its compassion, generosity, and unwavering commitment to serving others in the name of Christ.
