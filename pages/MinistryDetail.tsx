@@ -53,6 +53,34 @@ const MinistryDetail: React.FC = () => {
         </div>
       </div>
 
+      {/* Gallery Section - For Pastor's Ministry and Children's Ministry */}
+      {(ministry.id === 'pastors-ministry' || ministry.id === 'childrens-ministry') && (
+        <div className="container mx-auto px-6 py-20 max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4">Gallery</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {ministry.id === 'pastors-ministry' 
+                ? "Moments from our Pastor's Ministry activities and events"
+                : "Moments from our Children's Ministry activities and events"}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {(ministry.id === 'pastors-ministry' ? [1, 2, 3, 4, 5, 6] : [1, 2, 3, 4, 5, 6, 7, 8, 9]).map((num) => (
+              <div
+                key={num}
+                className="group overflow-hidden rounded-lg bg-gray-100 aspect-[4/3] cursor-pointer hover:shadow-xl transition-all duration-300"
+              >
+                <img
+                  src={`/images/${ministry.id === 'pastors-ministry' ? 'Pastor' : 'children'}/${num}.jpeg`}
+                  alt={`${ministry.title} ${num}`}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       <div className="container mx-auto px-6 py-20 max-w-5xl">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           

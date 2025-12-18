@@ -63,22 +63,42 @@ const Footer: React.FC = () => {
           {/* Service Times (Span 3) */}
           <div className="lg:col-span-3">
             <h4 className="text-xs font-bold uppercase tracking-widest mb-6 text-gray-600">Service Times</h4>
-            <ul className="space-y-1 text-sm">
-               <li className="flex items-center">
-                <span className="text-gray-400 w-28 shrink-0">Sundays</span>
-                <span className="font-medium text-white">9:30 AM</span>
+            <ul className="space-y-4 text-sm">
+              <li>
+                <div className="flex items-start">
+                  <span className="text-gray-400 w-24 shrink-0 font-medium">Sunday</span>
+                  <div className="flex-1">
+                    <span className="font-medium text-white block">9:30 AM – 1:00 PM</span>
+                    <span className="text-gray-500 text-xs mt-1">Sunday Worship Service</span>
+                  </div>
+                </div>
               </li>
-              <li className="flex items-center">
-                <span className="text-gray-400 w-28 shrink-0">Wednesdays</span>
-                <span className="font-medium text-white">10:00 AM</span>
+              <li>
+                <div className="flex items-start">
+                  <span className="text-gray-400 w-24 shrink-0 font-medium">Wednesday</span>
+                  <div className="flex-1">
+                    <span className="font-medium text-white block">10:00 AM – 12:00 PM</span>
+                    <span className="text-gray-500 text-xs mt-1">Women's Fellowship & Prayer Service</span>
+                  </div>
+                </div>
               </li>
-              <li className="flex items-center">
-                <span className="text-gray-400 w-28 shrink-0">Fridays</span>
-                <span className="font-medium text-white">10:00 AM</span>
+              <li>
+                <div className="flex items-start">
+                  <span className="text-gray-400 w-24 shrink-0 font-medium">Friday</span>
+                  <div className="flex-1">
+                    <span className="font-medium text-white block">10:00 AM – 2:00 PM</span>
+                    <span className="text-gray-500 text-xs mt-1">Fasting Prayer Service</span>
+                  </div>
+                </div>
               </li>
-              <li className="flex items-center">
-                <span className="text-gray-400 w-28 shrink-0">Saturdays</span>
-                <span className="font-medium text-white">7:00 PM</span>
+              <li>
+                <div className="flex items-start">
+                  <span className="text-gray-400 w-24 shrink-0 font-medium">Saturday</span>
+                  <div className="flex-1">
+                    <span className="font-medium text-white block">7:00 PM – 9:00 PM</span>
+                    <span className="text-gray-500 text-xs mt-1">Youth Service</span>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>

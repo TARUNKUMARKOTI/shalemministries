@@ -68,7 +68,7 @@ const About: React.FC = () => {
                   <BookOpen className="w-8 h-8" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-gray-700 transition-colors">Pastors' Ministry</h3>
+              <h3 className="text-2xl font-bold mb-4 group-hover:text-gray-700 transition-colors">Pastor's Ministry</h3>
               <p className="text-gray-600 leading-relaxed">
                 We focus on encouraging and strengthening pastors through the Word of God, along with distributing clothing and essential support to help them in their ministry work.
               </p>

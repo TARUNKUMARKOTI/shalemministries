@@ -1,5 +1,5 @@
 import { NavLink, Event, Ministry } from './types';
-import { Calendar, Heart, Users, Home, Globe } from 'lucide-react';
+import { Calendar, Heart, Users, Home, Globe, BookOpen } from 'lucide-react';
 import React from 'react';
 
 export const ORGANIZATION_NAME = "SHALEM MINISTRIES";
@@ -29,38 +29,38 @@ export const NAV_LINKS: NavLink[] = [
 export const UPCOMING_EVENTS: Event[] = [
   {
     id: '1',
-    title: "Children's Ministry",
-    date: 'Ongoing',
-    time: 'Various Times',
+    title: 'Grand Christmas Event',
+    date: '21st December',
+    time: 'TBA',
     location: 'Shalem Ministries',
-    description: 'Programs such as Vacation Bible School (VBS), also helping children learn and study their books in simple and engaging ways. We also distribute books and clothing to support their growth and well-being.',
+    description: 'A special celebration filled with worship, the Word of God, and joyful fellowship as we celebrate the birth of our Savior.',
     imageUrl: '/images/ChildrenMinistry.jpeg'
   },
   {
     id: '2',
-    title: "Pastors' Ministry",
-    date: 'Ongoing',
-    time: 'Various Times',
+    title: 'Christmas Celebrations',
+    date: '25th December',
+    time: 'TBA',
     location: 'Shalem Ministries',
-    description: 'Initiatives focused on encouraging and strengthening pastors through the Word of God, along with distributing clothing and essential support.',
-    imageUrl: '/images/PastorMinistry.jpeg'
-  },
-  {
-    id: '3',
-    title: 'Church Ministry',
-    date: 'Ongoing',
-    time: 'Various Times',
-    location: 'Shalem Ministries',
-    description: 'Partnering with and supporting local churches through practical help, resources, and ministry assistance.',
+    description: 'A day of praise, thanksgiving, and remembrance of the love and grace of Jesus Christ through worship and prayer.',
     imageUrl: '/images/ChurchMinistry.jpeg'
   },
   {
-    id: '4',
-    title: 'Old Age Ministry',
-    date: 'Ongoing',
-    time: 'Various Times',
+    id: '3',
+    title: 'New Year Watch-Night Service',
+    date: '31st December',
+    time: 'TBA',
     location: 'Shalem Ministries',
-    description: 'Serving elderly individuals by providing medicines and hospital support, with the help of young volunteers who assist and care for them with love and respect.',
+    description: 'An evening of prayer, reflection, and worship as we thank God for the past year and seek His guidance for the year ahead.',
+    imageUrl: '/images/PastorMinistry.jpeg'
+  },
+  {
+    id: '4',
+    title: 'New Year Event',
+    date: '1st January',
+    time: 'TBA',
+    location: 'Shalem Ministries',
+    description: "A blessed start to the new year with prayer, worship, and a message of hope, dedicating the year into God's hands.",
     imageUrl: '/images/OrphanageHome.jpeg'
   }
 ];
@@ -89,6 +89,14 @@ export const MINISTRIES: Ministry[] = [
     longDescription: "Our Children's Ministry partners with parents to lead children to become fully devoted followers of Christ. We create safe, fun, and engaging environments where kids can learn biblical truths at their level. From Sunday school to special camps, we are committed to laying a strong spiritual foundation for the next generation.",
     imageUrl: "/images/ChildrenMinistry2.jpeg",
     icon: <Heart className="w-6 h-6" />
+  },
+  {
+    id: 'pastors-ministry',
+    title: "Pastor's Ministry",
+    description: "Initiatives focused on encouraging and strengthening pastors through the Word of God, along with distributing clothing and essential support.",
+    longDescription: "Our Pastor's Ministry is dedicated to supporting and empowering pastors who serve in various communities. We provide encouragement through the Word of God, practical resources, and essential support including clothing and other necessities. We believe in strengthening those who lead God's people, helping them to continue their vital work with renewed strength and resources.",
+    imageUrl: "/images/PastorMinistry.jpeg",
+    icon: <BookOpen className="w-6 h-6" />
   },
   {
     id: 'outreach',

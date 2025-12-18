@@ -32,7 +32,7 @@ const Ministries: React.FC = () => {
                   <img 
                     src={ministry.imageUrl} 
                     alt={ministry.title} 
-                    className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-8 md:p-12 md:w-3/5 flex flex-col justify-center text-center md:text-left">
