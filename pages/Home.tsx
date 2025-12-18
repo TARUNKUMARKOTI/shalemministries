@@ -17,9 +17,9 @@ const Home: React.FC = () => {
   return (
     <div className="animate-fade-in">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center md:items-center justify-center overflow-hidden pt-8 md:pt-0">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute left-0 right-0 bottom-0 z-0" style={{ top: '5rem' }}>
           <img 
             src="/images/hero.jpeg" 
             alt="Church Gathering" 
