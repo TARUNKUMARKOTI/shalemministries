@@ -40,34 +40,34 @@ const Navbar: React.FC = () => {
   };
 
   const navClasses = `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-    scrolled && !isOpen ? 'bg-white/95 backdrop-blur-sm border-b border-gray-100 py-4' : 'bg-transparent py-6'
+    scrolled && !isOpen ? 'bg-white/95 backdrop-blur-sm border-b border-gray-100 py-4' : 'bg-white/95 backdrop-blur-sm border-b border-gray-100 py-6'
   }`;
 
   const linkClasses = (isActive: boolean) => `
-    text-sm font-bold tracking-wide transition-all duration-200 border-b-2 pb-1
+    text-sm font-bold tracking-wide transition-all duration-200 border-b-2 leading-none py-1
     ${isActive ? 'text-black border-black' : 'text-black border-transparent hover:border-gray-300'}
   `;
 
   return (
     <>
       <nav className={navClasses}>
-        <div className="container mx-auto px-6 flex justify-between items-center">
+        <div className="container mx-auto px-6 flex justify-between items-center h-full min-h-full">
           {/* Logo */}
           <RouterNavLink 
             to="/" 
-            className={`text-2xl font-bold tracking-tighter z-50 transition-colors duration-300 ${isOpen ? 'text-black' : 'text-black'}`}
+            className={`text-2xl font-bold tracking-tighter z-50 transition-colors duration-300 flex items-center leading-none ${isOpen ? 'text-black' : 'text-black'}`}
             onClick={() => setIsOpen(false)}
           >
             {ORGANIZATION_NAME}
           </RouterNavLink>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-12">
+          <div className="hidden md:flex items-center space-x-12 h-full">
             {NAV_LINKS.map((link) => (
               <RouterNavLink
                 key={link.path}
                 to={link.path}
-                className={({ isActive }) => linkClasses(isActive)}
+                className={({ isActive }) => `flex items-center h-full ${linkClasses(isActive)}`}
               >
                 {link.label.toUpperCase()}
               </RouterNavLink>
