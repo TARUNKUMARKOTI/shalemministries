@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   const phoneNumbers = PHONE.split(',').map(p => p.trim());
 
   return (
-    <footer className="bg-black text-white pt-24 pb-12 border-t border-gray-900 font-sans">
+    <footer className="bg-black dark:bg-black text-white pt-24 pb-12 border-t border-gray-900 dark:border-gray-800 font-sans transition-colors duration-200">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
           
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
                 href={SOCIAL_LINKS.instagram} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-900 hover:bg-white text-gray-400 hover:text-black transition-all duration-300 hover:scale-110 border border-gray-800 hover:border-white"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-900 dark:bg-gray-800 hover:bg-white dark:hover:bg-gray-700 text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white transition-all duration-300 hover:scale-110 border border-gray-800 dark:border-gray-700 hover:border-white dark:hover:border-gray-600"
               >
                 <Instagram size={18} />
               </a>
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
                 href={SOCIAL_LINKS.facebook} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-900 hover:bg-white text-gray-400 hover:text-black transition-all duration-300 hover:scale-110 border border-gray-800 hover:border-white"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-900 dark:bg-gray-800 hover:bg-white dark:hover:bg-gray-700 text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white transition-all duration-300 hover:scale-110 border border-gray-800 dark:border-gray-700 hover:border-white dark:hover:border-gray-600"
               >
                 <Facebook size={18} />
               </a>
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                 href={SOCIAL_LINKS.youtube} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-900 hover:bg-white text-gray-400 hover:text-black transition-all duration-300 hover:scale-110 border border-gray-800 hover:border-white"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-900 dark:bg-gray-800 hover:bg-white dark:hover:bg-gray-700 text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white transition-all duration-300 hover:scale-110 border border-gray-800 dark:border-gray-700 hover:border-white dark:hover:border-gray-600"
               >
                 <Youtube size={18} />
               </a>
@@ -48,11 +48,11 @@ const Footer: React.FC = () => {
 
           {/* Navigation (Span 2) */}
           <div className="lg:col-span-2">
-            <h4 className="text-xs font-bold uppercase tracking-widest mb-6 text-gray-600">Explore</h4>
+            <h4 className="text-xs font-bold uppercase tracking-widest mb-6 text-gray-600 dark:text-gray-400">Explore</h4>
             <ul className="space-y-3">
               {NAV_LINKS.map(link => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-gray-400 hover:text-white transition-colors text-sm font-medium block w-fit">
+                  <Link to={link.path} className="text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors text-sm font-medium block w-fit">
                     {link.label}
                   </Link>
                 </li>
@@ -62,14 +62,14 @@ const Footer: React.FC = () => {
 
           {/* Service Times (Span 3) */}
           <div className="lg:col-span-3">
-            <h4 className="text-xs font-bold uppercase tracking-widest mb-6 text-gray-600">Service Times</h4>
+            <h4 className="text-xs font-bold uppercase tracking-widest mb-6 text-gray-600 dark:text-gray-400">Service Times</h4>
             <ul className="space-y-4 text-sm">
               <li>
                 <div className="flex items-start">
-                  <span className="text-gray-400 w-24 shrink-0 font-medium">Sunday</span>
+                  <span className="text-gray-400 dark:text-gray-500 w-24 shrink-0 font-medium">Sunday</span>
                   <div className="flex-1">
                     <span className="font-medium text-white block">9:30 AM – 1:00 PM</span>
-                    <span className="text-gray-500 text-xs mt-1">Sunday Worship Service</span>
+                    <span className="text-gray-500 dark:text-gray-400 text-xs mt-1">Sunday Worship Service</span>
                   </div>
                 </div>
               </li>
@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
 
           {/* Contact (Span 3) */}
           <div className="lg:col-span-3">
-            <h4 className="text-xs font-bold uppercase tracking-widest mb-6 text-gray-600">Contact Us</h4>
+            <h4 className="text-xs font-bold uppercase tracking-widest mb-6 text-gray-600 dark:text-gray-400">Contact Us</h4>
             <div className="space-y-2">
               
               {/* Address */}
@@ -113,9 +113,9 @@ const Footer: React.FC = () => {
                 href={MAP_URL} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="group flex items-start space-x-4 text-gray-400 hover:text-white transition-colors p-3 -ml-3 rounded-lg hover:bg-gray-900/50"
+                className="group flex items-start space-x-4 text-gray-400 dark:text-gray-500 hover:text-white dark:hover:text-gray-300 transition-colors p-3 -ml-3 rounded-lg hover:bg-gray-900/50 dark:hover:bg-gray-800/50"
               >
-                <div className="bg-gray-900 group-hover:bg-white group-hover:text-black p-2 rounded-md transition-colors duration-300 mt-1">
+                <div className="bg-gray-900 dark:bg-gray-800 group-hover:bg-white dark:group-hover:bg-gray-700 group-hover:text-black dark:group-hover:text-white p-2 rounded-md transition-colors duration-300 mt-1">
                    <MapPin size={16} />
                 </div>
                 <div className="text-sm mt-2 flex flex-col">
@@ -132,7 +132,7 @@ const Footer: React.FC = () => {
                 href={`mailto:${EMAIL}`}
                 className="group flex items-center space-x-4 text-gray-400 hover:text-white transition-colors p-3 -ml-3 rounded-lg hover:bg-gray-900/50"
               >
-                 <div className="bg-gray-900 group-hover:bg-white group-hover:text-black p-2 rounded-md transition-colors duration-300">
+                 <div className="bg-gray-900 dark:bg-gray-800 group-hover:bg-white dark:group-hover:bg-gray-700 group-hover:text-black dark:group-hover:text-white p-2 rounded-md transition-colors duration-300">
                    <Mail size={16} />
                 </div>
                 <span className="text-sm break-all">{EMAIL}</span>
@@ -146,7 +146,7 @@ const Footer: React.FC = () => {
                     href={`tel:${num.replace(/[^0-9+]/g, '')}`}
                     className="group flex items-center space-x-4 text-gray-400 hover:text-white transition-colors p-3 -ml-3 rounded-lg hover:bg-gray-900/50"
                   >
-                    <div className="bg-gray-900 group-hover:bg-white group-hover:text-black p-2 rounded-md transition-colors duration-300">
+                    <div className="bg-gray-900 dark:bg-gray-800 group-hover:bg-white dark:group-hover:bg-gray-700 group-hover:text-black dark:group-hover:text-white p-2 rounded-md transition-colors duration-300">
                       <Phone size={16} />
                     </div>
                     <span className="text-sm">{num}</span>
@@ -159,21 +159,21 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="border-t border-gray-900 pt-8">
+        <div className="border-t border-gray-900 dark:border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-center md:justify-between items-center mb-6">
-            <p className="text-xs text-gray-600 mb-4 md:mb-0">&copy; {new Date().getFullYear()} {ORGANIZATION_NAME}. All rights reserved.</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400 mb-4 md:mb-0">&copy; {new Date().getFullYear()} {ORGANIZATION_NAME}. All rights reserved.</p>
           </div>
           
           {/* Legal Links */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-xs text-gray-500 border-t border-gray-900 pt-6">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-xs text-gray-500 dark:text-gray-400 border-t border-gray-900 dark:border-gray-800 pt-6">
             <Link to="/terms-and-conditions" className="hover:text-white transition-colors">
               Terms & Conditions
             </Link>
-            <span className="text-gray-700">•</span>
+            <span className="text-gray-700 dark:text-gray-600">•</span>
             <Link to="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <span className="text-gray-700">•</span>
+            <span className="text-gray-700 dark:text-gray-600">•</span>
             <Link to="/refund-policy" className="hover:text-white transition-colors">
               Refund Policy
             </Link>

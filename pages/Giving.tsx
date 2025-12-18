@@ -218,21 +218,21 @@ const Giving: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-32 pb-20 px-4 animate-fade-in flex flex-col items-center justify-center">
+    <div className="min-h-screen bg-gray-50 dark:bg-black pt-32 pb-20 px-4 animate-fade-in flex flex-col items-center justify-center transition-colors duration-200">
       
       {/* Header */}
       <div className="text-center mb-8">
-        <h1 className="text-2xl font-bold tracking-tight text-black">{ORGANIZATION_NAME}</h1>
-        <p className="text-gray-500 text-sm mt-1">Secure Donation</p>
+        <h1 className="text-2xl font-bold tracking-tight text-black dark:text-white">{ORGANIZATION_NAME}</h1>
+        <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Secure Donation</p>
       </div>
 
       {/* Donation Card */}
-      <form onSubmit={handleSubmit} className="w-full max-w-lg bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+      <form onSubmit={handleSubmit} className="w-full max-w-lg bg-white dark:bg-black rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden transition-colors duration-200">
         
         {/* Amount Section */}
-        <div className="p-8 pb-4 text-center bg-gray-50/50 border-b border-gray-100">
+        <div className="p-8 pb-4 text-center bg-gray-50/50 dark:bg-black/50 border-b border-gray-100 dark:border-gray-700">
           <div className="flex justify-center items-center gap-1">
-            <span className={`text-4xl font-bold transition-all ${amount ? 'text-black' : 'text-gray-300'}`}>
+            <span className={`text-4xl font-bold transition-all ${amount ? 'text-black dark:text-white' : 'text-gray-300 dark:text-gray-600'}`}>
               ₹
             </span>
             <input
@@ -240,12 +240,12 @@ const Giving: React.FC = () => {
               value={amount}
               onChange={handleAmountChange}
               placeholder="0"
-              className="bg-transparent text-left text-6xl font-bold text-black placeholder-gray-200 focus:outline-none py-2 caret-black"
+              className="bg-transparent text-left text-6xl font-bold text-black dark:text-white placeholder-gray-200 dark:placeholder-gray-600 focus:outline-none py-2 caret-black dark:caret-white"
               style={{ width: amount ? `${amount.length * 0.7 + 0.2}em` : '1.5ch' }}
               autoFocus
             />
           </div>
-          <div className="mt-2 text-xs text-gray-400 font-medium uppercase tracking-wider">INR</div>
+          <div className="mt-2 text-xs text-gray-400 dark:text-gray-500 font-medium uppercase tracking-wider">INR</div>
           {errors.amount && (
             <p className="mt-2 text-xs text-red-500">{errors.amount}</p>
           )}
@@ -256,18 +256,18 @@ const Giving: React.FC = () => {
           
           {/* Fund Selector */}
           <div className="relative group">
-            <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Fund</label>
+            <label className="block text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-2">Fund</label>
             <div className="relative">
               <select 
                 value={fund}
                 onChange={(e) => setFund(e.target.value)}
-                className="w-full appearance-none bg-white border border-gray-200 rounded-lg py-3 px-4 text-base font-medium text-black focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-all cursor-pointer shadow-sm"
+                className="w-full appearance-none bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg py-3 px-4 text-base font-medium text-black dark:text-white focus:outline-none focus:border-black dark:focus:border-white focus:ring-1 focus:ring-black dark:focus:ring-white transition-all cursor-pointer shadow-sm"
               >
                 <option>General offering</option>
                 <option>Percentage giving</option>
                 <option>Building Initiative</option>
               </select>
-              <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+              <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400 dark:text-gray-500">
                 <ChevronDown size={16} />
               </div>
             </div>
@@ -275,17 +275,17 @@ const Giving: React.FC = () => {
 
           {/* Frequency Selector */}
           <div className="relative group">
-            <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Frequency</label>
+            <label className="block text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-2">Frequency</label>
             <div className="relative">
               <select 
                 value={frequency}
                 onChange={(e) => setFrequency(e.target.value)}
-                className="w-full appearance-none bg-white border border-gray-200 rounded-lg py-3 px-4 text-base font-medium text-black focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-all cursor-pointer shadow-sm"
+                className="w-full appearance-none bg-white dark:bg-black border border-gray-200 dark:border-gray-700 rounded-lg py-3 px-4 text-base font-medium text-black dark:text-white focus:outline-none focus:border-black dark:focus:border-white focus:ring-1 focus:ring-black dark:focus:ring-white transition-all cursor-pointer shadow-sm"
               >
                 <option>One time</option>
                 <option>Regularly</option>
               </select>
-               <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+               <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400 dark:text-gray-500">
                 <ChevronDown size={16} />
               </div>
             </div>
@@ -293,7 +293,7 @@ const Giving: React.FC = () => {
 
           {/* Personal Info */}
           <div className="space-y-4 pt-2">
-            <h3 className="text-sm font-bold text-black border-b border-gray-100 pb-2">Personal Information</h3>
+            <h3 className="text-sm font-bold text-black dark:text-white border-b border-gray-100 dark:border-gray-700 pb-2">Personal Information</h3>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <input 
@@ -306,8 +306,8 @@ const Giving: React.FC = () => {
                       setErrors({ ...errors, firstName: undefined });
                     }
                   }}
-                  className={`w-full py-3 px-4 bg-gray-50 border rounded-lg focus:bg-white focus:outline-none transition-colors placeholder-gray-400 text-black text-sm ${
-                    errors.firstName ? 'border-red-500 focus:border-red-500' : 'border-gray-200 focus:border-black'
+                  className={`w-full py-3 px-4 bg-gray-50 dark:bg-black border rounded-lg focus:bg-white dark:focus:bg-gray-800 focus:outline-none transition-colors placeholder-gray-400 dark:placeholder-gray-500 text-black dark:text-white text-sm ${
+                    errors.firstName ? 'border-red-500 focus:border-red-500' : 'border-gray-200 dark:border-gray-700 focus:border-black dark:focus:border-white'
                   }`}
                 />
                 {errors.firstName && (
@@ -325,8 +325,8 @@ const Giving: React.FC = () => {
                       setErrors({ ...errors, lastName: undefined });
                     }
                   }}
-                  className={`w-full py-3 px-4 bg-gray-50 border rounded-lg focus:bg-white focus:outline-none transition-colors placeholder-gray-400 text-black text-sm ${
-                    errors.lastName ? 'border-red-500 focus:border-red-500' : 'border-gray-200 focus:border-black'
+                  className={`w-full py-3 px-4 bg-gray-50 dark:bg-black border rounded-lg focus:bg-white dark:focus:bg-gray-800 focus:outline-none transition-colors placeholder-gray-400 dark:placeholder-gray-500 text-black dark:text-white text-sm ${
+                    errors.lastName ? 'border-red-500 focus:border-red-500' : 'border-gray-200 dark:border-gray-700 focus:border-black dark:focus:border-white'
                   }`}
                 />
                 {errors.lastName && (
@@ -345,8 +345,8 @@ const Giving: React.FC = () => {
                     setErrors({ ...errors, email: undefined });
                   }
                 }}
-                className={`w-full py-3 px-4 bg-gray-50 border rounded-lg focus:bg-white focus:outline-none transition-colors placeholder-gray-400 text-black text-sm ${
-                  errors.email ? 'border-red-500 focus:border-red-500' : 'border-gray-200 focus:border-black'
+                className={`w-full py-3 px-4 bg-gray-50 dark:bg-black border rounded-lg focus:bg-white dark:focus:bg-gray-800 focus:outline-none transition-colors placeholder-gray-400 dark:placeholder-gray-500 text-black dark:text-white text-sm ${
+                  errors.email ? 'border-red-500 focus:border-red-500' : 'border-gray-200 dark:border-gray-700 focus:border-black dark:focus:border-white'
                 }`}
               />
               {errors.email && (
@@ -356,13 +356,13 @@ const Giving: React.FC = () => {
           </div>
 
           {/* Payment Security Info */}
-          <div className="pt-4 border-t border-gray-100">
-            <div className="flex items-center justify-center space-x-2 text-gray-500 text-xs">
+          <div className="pt-4 border-t border-gray-100 dark:border-gray-700">
+            <div className="flex items-center justify-center space-x-2 text-gray-500 dark:text-gray-400 text-xs">
               <Lock size={14} />
               <span>Secure payment powered by Razorpay</span>
               <CreditCard size={14} />
             </div>
-            <p className="text-center text-[10px] text-gray-400 mt-2">
+            <p className="text-center text-[10px] text-gray-400 dark:text-gray-500 mt-2">
               All major cards, UPI, Netbanking, and wallets accepted
             </p>
           </div>
@@ -374,16 +374,16 @@ const Giving: React.FC = () => {
           <button 
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-black text-white py-4 rounded-lg font-bold text-lg tracking-wide hover:bg-gray-800 transition-colors flex items-center justify-center shadow-lg shadow-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-black dark:bg-white text-white dark:text-black py-4 rounded-lg font-bold text-lg tracking-wide hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors flex items-center justify-center shadow-lg shadow-gray-200 dark:shadow-gray-900 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <span>{isSubmitting ? 'Processing...' : (amount ? `Give ₹${amount}` : 'Give')}</span>
-            {!isSubmitting && <ArrowRight size={20} className="ml-2 opacity-60" />}
+            {!isSubmitting && <ArrowRight size={20} className="ml-2 opacity-60 dark:opacity-80" />}
           </button>
         </div>
       </form>
 
       {/* Footer Info */}
-      <div className="mt-8 text-center text-xs text-gray-400">
+      <div className="mt-8 text-center text-xs text-gray-400 dark:text-gray-500">
         <p className="flex items-center justify-center gap-1"><Lock size={12}/> Your donation is secure and encrypted.</p>
         <p className="mt-2">&copy; {new Date().getFullYear()} {ORGANIZATION_NAME}</p>
       </div>
@@ -395,13 +395,13 @@ const Giving: React.FC = () => {
           onClick={() => setModal(null)}
         >
           <div 
-            className="bg-white rounded-xl shadow-2xl max-w-md w-full p-8 relative animate-fade-in border border-gray-100"
+            className="bg-white dark:bg-black rounded-xl shadow-2xl max-w-md w-full p-8 relative animate-fade-in border border-gray-100 dark:border-gray-700 transition-colors duration-200"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={() => setModal(null)}
-              className="absolute top-4 right-4 text-gray-400 hover:text-black transition-colors"
+              className="absolute top-4 right-4 text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white transition-colors"
             >
               <X size={20} />
             </button>
@@ -426,7 +426,7 @@ const Giving: React.FC = () => {
                 {modal.type === 'success' ? 'Payment Successful!' : modal.type === 'failure' ? 'Payment Failed' : 'Error'}
               </h3>
               
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
                 {modal.message}
               </p>
 

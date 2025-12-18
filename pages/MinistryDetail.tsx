@@ -29,12 +29,12 @@ const MinistryDetail: React.FC = () => {
   }
 
   return (
-    <div className="pt-24 animate-fade-in min-h-screen bg-white">
+    <div className="pt-24 animate-fade-in min-h-screen bg-white dark:bg-black transition-colors duration-200">
       {/* Back Link */}
       <div className="container mx-auto px-6 py-8">
         <button 
           onClick={() => navigate(backPath)} 
-          className="flex items-center text-xs font-bold text-gray-400 hover:text-black transition-colors uppercase tracking-widest group"
+          className="flex items-center text-xs font-bold text-gray-400 dark:text-gray-500 hover:text-black dark:hover:text-white transition-colors uppercase tracking-widest group"
         >
           <ArrowLeft size={14} className="mr-2 group-hover:-translate-x-1 transition-transform" />
           {backText}
@@ -42,7 +42,7 @@ const MinistryDetail: React.FC = () => {
       </div>
 
       {/* Hero Image */}
-      <div className="w-full h-[40vh] md:h-[50vh] overflow-hidden bg-gray-100 relative">
+      <div className="w-full h-[40vh] md:h-[50vh] overflow-hidden bg-gray-100 dark:bg-black relative">
         <img 
           src={ministry.imageUrl} 
           alt={ministry.title} 
@@ -57,8 +57,8 @@ const MinistryDetail: React.FC = () => {
       {(ministry.id === 'pastors-ministry' || ministry.id === 'childrens-ministry') && (
         <div className="container mx-auto px-6 py-20 max-w-7xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4">Gallery</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4 text-black dark:text-white">Gallery</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               {ministry.id === 'pastors-ministry' 
                 ? "Moments from our Pastor's Ministry activities and events"
                 : "Moments from our Children's Ministry activities and events"}
@@ -68,7 +68,7 @@ const MinistryDetail: React.FC = () => {
             {(ministry.id === 'pastors-ministry' ? [1, 2, 3, 4, 5, 6] : [1, 2, 3, 4, 5, 6, 7, 8, 9]).map((num) => (
               <div
                 key={num}
-                className="group overflow-hidden rounded-lg bg-gray-100 aspect-[4/3] cursor-pointer hover:shadow-xl transition-all duration-300"
+                className="group overflow-hidden rounded-lg bg-gray-100 dark:bg-black aspect-[4/3] cursor-pointer hover:shadow-xl dark:hover:shadow-gray-800/50 transition-all duration-300"
               >
                 <img
                   src={`/images/${ministry.id === 'pastors-ministry' ? 'Pastor' : 'children'}/${num}.jpeg`}
@@ -86,9 +86,9 @@ const MinistryDetail: React.FC = () => {
           
           {/* Main Content */}
           <div className="lg:col-span-2 text-center lg:text-left">
-            <h2 className="text-3xl font-bold mb-6">About this Ministry</h2>
-            <div className="prose prose-lg text-gray-600 mb-8">
-              <p className="lead text-xl text-black font-medium mb-6">{ministry.description}</p>
+            <h2 className="text-3xl font-bold mb-6 text-black dark:text-white">About this Ministry</h2>
+            <div className="prose prose-lg text-gray-600 dark:text-gray-300 mb-8">
+              <p className="lead text-xl text-black dark:text-white font-medium mb-6">{ministry.description}</p>
               <p className="leading-relaxed">
                 {ministry.longDescription}
               </p>
@@ -97,20 +97,20 @@ const MinistryDetail: React.FC = () => {
               </p>
             </div>
 
-            <div className="mt-12 p-8 bg-gray-50 border border-gray-100 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">Why Join?</h3>
+            <div className="mt-12 p-8 bg-gray-50 dark:bg-black border border-gray-100 dark:border-gray-700 rounded-lg transition-colors duration-200">
+                <h3 className="text-xl font-bold mb-4 text-black dark:text-white">Why Join?</h3>
                 <ul className="space-y-3">
                     <li className="flex items-start justify-center lg:justify-start">
-                        <CheckCircle className="w-5 h-5 text-black mr-3 mt-1 shrink-0" />
-                        <span className="text-gray-600">Grow deeper in your relationship with God.</span>
+                        <CheckCircle className="w-5 h-5 text-black dark:text-white mr-3 mt-1 shrink-0" />
+                        <span className="text-gray-600 dark:text-gray-300">Grow deeper in your relationship with God.</span>
                     </li>
                     <li className="flex items-start justify-center lg:justify-start">
-                        <CheckCircle className="w-5 h-5 text-black mr-3 mt-1 shrink-0" />
-                        <span className="text-gray-600">Build lasting friendships with like-minded people.</span>
+                        <CheckCircle className="w-5 h-5 text-black dark:text-white mr-3 mt-1 shrink-0" />
+                        <span className="text-gray-600 dark:text-gray-300">Build lasting friendships with like-minded people.</span>
                     </li>
                     <li className="flex items-start justify-center lg:justify-start">
-                        <CheckCircle className="w-5 h-5 text-black mr-3 mt-1 shrink-0" />
-                        <span className="text-gray-600">Serve the community and make a tangible difference.</span>
+                        <CheckCircle className="w-5 h-5 text-black dark:text-white mr-3 mt-1 shrink-0" />
+                        <span className="text-gray-600 dark:text-gray-300">Serve the community and make a tangible difference.</span>
                     </li>
                 </ul>
             </div>
@@ -118,23 +118,23 @@ const MinistryDetail: React.FC = () => {
 
           {/* Sidebar */}
           <div className="lg:col-span-1 space-y-8">
-             <div className="bg-black text-white p-8 rounded-lg shadow-xl text-center lg:text-left">
+             <div className="bg-black dark:bg-white text-white dark:text-black p-8 rounded-lg shadow-xl text-center lg:text-left transition-colors duration-200">
                 <h3 className="text-xl font-bold mb-4">Get Involved</h3>
-                <p className="text-gray-300 text-sm mb-6">
+                <p className="text-gray-300 dark:text-gray-700 text-sm mb-6">
                     Ready to take the next step? We would love to have you join us.
                 </p>
                 <div className="mt-4">
-                     <p className="text-sm text-gray-400 mb-2">Speak to a leader:</p>
-                     <a href={`tel:${primaryPhoneTel}`} className="text-sm font-bold text-white border-b border-white pb-0.5 hover:opacity-80 transition-opacity">Contact Us</a>
+                     <p className="text-sm text-gray-400 dark:text-gray-600 mb-2">Speak to a leader:</p>
+                     <a href={`tel:${primaryPhoneTel}`} className="text-sm font-bold text-white dark:text-black border-b border-white dark:border-black pb-0.5 hover:opacity-80 transition-opacity">Contact Us</a>
                 </div>
              </div>
 
-             <div className="border border-gray-200 p-8 rounded-lg text-center lg:text-left">
-                <h4 className="font-bold mb-2">Have Questions?</h4>
-                <p className="text-gray-500 text-sm mb-4">
+             <div className="border border-gray-200 dark:border-gray-700 p-8 rounded-lg text-center lg:text-left bg-white dark:bg-black transition-colors duration-200">
+                <h4 className="font-bold mb-2 text-black dark:text-white">Have Questions?</h4>
+                <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">
                     If you have any questions about the {ministry.title} ministry, feel free to reach out.
                 </p>
-                <a href={`mailto:${EMAIL}`} className="text-sm font-bold border-b border-black pb-0.5 hover:opacity-70 transition-opacity">
+                <a href={`mailto:${EMAIL}`} className="text-sm font-bold border-b border-black dark:border-white pb-0.5 hover:opacity-70 transition-opacity text-black dark:text-white">
                     Email Us
                 </a>
              </div>

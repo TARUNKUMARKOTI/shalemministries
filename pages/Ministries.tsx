@@ -7,25 +7,25 @@ const Ministries: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="pt-24 animate-fade-in bg-white">
+    <div className="pt-24 animate-fade-in bg-white dark:bg-black transition-colors duration-200">
       {/* Hero Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-black transition-colors duration-200">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6">MINISTRIES</h1>
-          <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 text-black dark:text-white">MINISTRIES</h1>
+          <p className="text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto">
             Extending love, hope, and compassion to every corner of our community.
           </p>
         </div>
       </section>
 
       {/* Ministries List */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-gray-50 dark:bg-black transition-colors duration-200">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="space-y-12">
             {MINISTRIES.map((ministry) => (
               <div 
                 key={ministry.id} 
-                className="bg-white group hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col md:flex-row cursor-pointer" 
+                className="bg-white dark:bg-black group hover:shadow-xl dark:hover:shadow-gray-800/50 transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden flex flex-col md:flex-row cursor-pointer" 
                 onClick={() => navigate(`/ministries/${ministry.id}`, { state: { from: '/ministries' } })}
               >
                 <div className="md:w-2/5 h-64 md:h-auto overflow-hidden">
@@ -37,13 +37,13 @@ const Ministries: React.FC = () => {
                 </div>
                 <div className="p-8 md:p-12 md:w-3/5 flex flex-col justify-center text-center md:text-left">
                   <div className="mb-4 flex justify-center md:justify-start">
-                    <div className="text-black opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="text-black dark:text-white opacity-60 group-hover:opacity-100 transition-opacity duration-500">
                       {ministry.icon && React.cloneElement(ministry.icon as React.ReactElement, { size: 32, strokeWidth: 1 })}
                     </div>
                   </div>
                   
-                  <h3 className="text-3xl font-bold mb-4">{ministry.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <h3 className="text-3xl font-bold mb-4 text-black dark:text-white">{ministry.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                     {ministry.description}
                   </p>
                   
@@ -67,20 +67,20 @@ const Ministries: React.FC = () => {
       </section>
 
       {/* Quote / Break Section */}
-      <section className="py-20 bg-gray-50 border-y border-gray-100">
+      <section className="py-20 bg-gray-50 dark:bg-black border-y border-gray-100 dark:border-gray-700 transition-colors duration-200">
         <div className="container mx-auto px-6 text-center max-w-3xl">
-          <h3 className="text-xl md:text-3xl font-serif italic text-gray-400 mb-6 leading-relaxed">
+          <h3 className="text-xl md:text-3xl font-serif italic text-gray-400 dark:text-gray-500 mb-6 leading-relaxed">
             "For even the Son of Man came not to be served but to serve, and to give his life as a ransom for many."
           </h3>
-          <p className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-black">Mark 10:45</p>
+          <p className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-black dark:text-white">Mark 10:45</p>
         </div>
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-24 bg-white text-center">
+      <section className="py-24 bg-white dark:bg-black text-center transition-colors duration-200">
          <div className="container mx-auto px-6">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4 md:mb-6">Want to get involved?</h2>
-            <p className="text-gray-500 mb-10 max-w-lg mx-auto font-light text-base md:text-lg">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-4 md:mb-6 text-black dark:text-white">Want to get involved?</h2>
+            <p className="text-gray-500 dark:text-gray-400 mb-10 max-w-lg mx-auto font-light text-base md:text-lg">
               There are many ways to serve. Join a team and make a difference today.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 px-4">

@@ -59,13 +59,13 @@ const Home: React.FC = () => {
       </section>
 
       {/* Welcome / Brief About */}
-      <section id="welcome-section" className="py-24 bg-white">
+      <section id="welcome-section" className="py-24 bg-white dark:bg-black transition-colors duration-200">
         <div className="container mx-auto px-6 text-center max-w-3xl">
-          <h2 className="text-sm font-bold tracking-widest uppercase mb-4 text-gray-500">Who We Are</h2>
-          <h3 className="text-2xl md:text-4xl font-bold text-black mb-8 tracking-tight">
+          <h2 className="text-sm font-bold tracking-widest uppercase mb-4 text-gray-500 dark:text-gray-400">Who We Are</h2>
+          <h3 className="text-2xl md:text-4xl font-bold text-black dark:text-white mb-8 tracking-tight">
             We are a church that believes in the transformative power of the Gospel.
           </h3>
-          <p className="text-gray-600 leading-relaxed text-lg mb-10">
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg mb-10">
             At {ORGANIZATION_NAME}, our mission is simple: Go therefore and make disciples of all nations. 
             We are dedicated to building a community that reflects the love of Christ in everything we do.
           </p>
@@ -76,28 +76,28 @@ const Home: React.FC = () => {
       </section>
 
       {/* Ministries Grid */}
-      <section className="py-24 bg-gray-50 border-t border-gray-100">
+      <section className="py-24 bg-gray-50 dark:bg-black border-t border-gray-100 dark:border-gray-700 transition-colors duration-200">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold tracking-tight mb-4">Our Ministries</h2>
-            <p className="text-gray-500">Serving the church, the children, and the world.</p>
+            <h2 className="text-4xl font-bold tracking-tight mb-4 text-black dark:text-white">Our Ministries</h2>
+            <p className="text-gray-500 dark:text-gray-400">Serving the church, the children, and the world.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {MINISTRIES.map((min) => (
               <div 
                 key={min.id} 
-                className="bg-white p-8 border border-gray-100 hover:shadow-lg transition-all duration-300 group cursor-pointer hover:-translate-y-1"
+                className="bg-white dark:bg-black p-8 border border-gray-100 dark:border-gray-700 hover:shadow-lg dark:hover:shadow-gray-800/50 transition-all duration-300 group cursor-pointer hover:-translate-y-1"
                 onClick={() => navigate(`/ministries/${min.id}`)}
               >
-                <div className="mb-6 text-black">
+                <div className="mb-6 text-black dark:text-white">
                   <div className="group-hover:scale-110 transition-transform duration-300 origin-left">
                     {min.icon}
                   </div>
                 </div>
-                <h4 className="text-xl font-bold mb-3">{min.title}</h4>
-                <p className="text-gray-500 text-sm leading-relaxed">{min.description}</p>
-                <div className="mt-6 flex items-center text-sm font-semibold underline decoration-transparent group-hover:decoration-black transition-all">
+                <h4 className="text-xl font-bold mb-3 text-black dark:text-white">{min.title}</h4>
+                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">{min.description}</p>
+                <div className="mt-6 flex items-center text-sm font-semibold text-black dark:text-white underline decoration-transparent group-hover:decoration-black dark:group-hover:decoration-white transition-all">
                   Learn More <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
@@ -107,12 +107,12 @@ const Home: React.FC = () => {
       </section>
 
       {/* Upcoming Events Teaser */}
-      <section className="py-24 bg-black text-white">
+      <section className="py-24 bg-black dark:bg-black text-white transition-colors duration-200">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 text-center md:text-left">
             <div>
               <h2 className="text-4xl font-bold tracking-tight mb-2">Happening Soon</h2>
-              <p className="text-gray-400">Mark your calendars for what's coming up.</p>
+              <p className="text-gray-400 dark:text-gray-500">Mark your calendars for what's coming up.</p>
             </div>
             <Button variant="outline-white" className="mt-6 md:mt-0" onClick={() => navigate('/events')}>
               VIEW ALL EVENTS
@@ -134,9 +134,9 @@ const Home: React.FC = () => {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-xs font-bold tracking-widest text-gray-400 mb-2 uppercase">{evt.date}</span>
-                  <h3 className="text-2xl font-bold mb-2 group-hover:text-gray-300 transition-colors">{evt.title}</h3>
-                  <p className="text-gray-500 text-sm">{evt.location} • {evt.time}</p>
+                  <span className="text-xs font-bold tracking-widest text-gray-400 dark:text-gray-500 mb-2 uppercase">{evt.date}</span>
+                  <h3 className="text-2xl font-bold mb-2 group-hover:text-gray-300 dark:group-hover:text-gray-400 transition-colors">{evt.title}</h3>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm">{evt.location} • {evt.time}</p>
                 </div>
               </div>
             ))}
