@@ -1,4 +1,4 @@
-import { NavLink, Event, Ministry } from './types';
+import { NavLink, Event, Ministry, Testimonial } from './types';
 import { Calendar, Heart, Users, Home, Globe, BookOpen } from 'lucide-react';
 import React from 'react';
 
@@ -105,5 +105,44 @@ export const MINISTRIES: Ministry[] = [
     longDescription: "We are committed to the Great Commission. Our outreach programs extend locally and globally, providing aid to the needy, supporting missionaries, and sharing the message of salvation. We believe in being the hands and feet of Jesus to a hurting world.",
     imageUrl: "/images/GlobalOutReach.jpeg",
     icon: <Globe className="w-6 h-6" />
+  }
+];
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    id: '1',
+    name: 'Sarah Johnson',
+    role: 'Church Member',
+    content: 'Shalem Ministries has been a blessing to our family. The love and care shown to our children through the Children\'s Ministry is incredible. Our kids look forward to every service!',
+  },
+  {
+    id: '2',
+    name: 'Pastor Michael',
+    role: 'Local Pastor',
+    content: 'The Pastor\'s Ministry has been a source of encouragement and support. The resources and fellowship provided have strengthened my ministry and renewed my passion for serving God\'s people.',
+  },
+  {
+    id: '3',
+    name: 'Priya Kumar',
+    role: 'Volunteer',
+    content: 'Serving with Shalem Ministries has transformed my life. Being part of the Orphanage Home ministry has shown me the true meaning of love and service. This is more than a ministry—it\'s a family.',
+  },
+  {
+    id: '4',
+    name: 'David Chen',
+    role: 'Community Member',
+    content: 'The outreach programs have made a real difference in our community. The practical help and spiritual guidance provided have touched many lives, including mine. God is truly at work here.',
+  },
+  {
+    id: '5',
+    name: 'Rebecca Thomas',
+    role: 'Church Member',
+    content: 'I\'ve been attending Shalem Ministries for over two years, and the teaching, worship, and community have deepened my faith in ways I never imagined. This is a place where you can truly grow.',
+  },
+  {
+    id: '6',
+    name: 'James Wilson',
+    role: 'Beneficiary',
+    content: 'The support I received during a difficult time in my life was incredible. The church didn\'t just pray for me—they walked alongside me, providing practical help and genuine care. I\'m forever grateful.',
   }
 ];

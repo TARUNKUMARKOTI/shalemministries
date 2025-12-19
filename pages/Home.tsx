@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
-import { MINISTRIES, UPCOMING_EVENTS, ORGANIZATION_NAME, SOCIAL_LINKS } from '../constants';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { MINISTRIES, UPCOMING_EVENTS, ORGANIZATION_NAME, SOCIAL_LINKS, TESTIMONIALS } from '../constants';
+import { ArrowRight, ChevronDown, Quote } from 'lucide-react';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -99,6 +99,38 @@ const Home: React.FC = () => {
                 <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">{min.description}</p>
                 <div className="mt-6 flex items-center text-sm font-semibold text-black dark:text-white underline decoration-transparent group-hover:decoration-black dark:group-hover:decoration-white transition-all">
                   Learn More <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-white dark:bg-black border-t border-gray-100 dark:border-gray-800 transition-colors duration-200">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold tracking-tight mb-4 text-black dark:text-white">What People Say</h2>
+            <p className="text-gray-500 dark:text-gray-400">Stories of transformation and impact from our community.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {TESTIMONIALS.map((testimonial) => (
+              <div 
+                key={testimonial.id} 
+                className="bg-gray-50 dark:bg-black p-8 border border-gray-100 dark:border-gray-800 rounded-lg hover:shadow-xl dark:hover:shadow-gray-800/50 transition-all duration-300 group hover:-translate-y-1"
+              >
+                <div className="mb-6">
+                  <Quote className="w-8 h-8 text-gray-300 dark:text-gray-700 group-hover:text-black dark:group-hover:text-white transition-colors" />
+                </div>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 text-base italic">
+                  "{testimonial.content}"
+                </p>
+                <div className="border-t border-gray-200 dark:border-gray-800 pt-4">
+                  <p className="font-bold text-black dark:text-white text-sm">{testimonial.name}</p>
+                  {testimonial.role && (
+                    <p className="text-gray-500 dark:text-gray-400 text-xs mt-1">{testimonial.role}</p>
+                  )}
                 </div>
               </div>
             ))}
