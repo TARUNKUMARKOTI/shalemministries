@@ -34,7 +34,7 @@ export const UPCOMING_EVENTS: Event[] = [
     time: 'TBA',
     location: 'Shalem Ministries',
     description: 'A special celebration filled with worship, the Word of God, and joyful fellowship as we celebrate the birth of our Savior.',
-    imageUrl: '/images/ChildrenMinistry.jpeg'
+    imageUrl: '/images/events/grand.jpeg'
   },
   {
     id: '2',
@@ -43,7 +43,7 @@ export const UPCOMING_EVENTS: Event[] = [
     time: 'TBA',
     location: 'Shalem Ministries',
     description: 'A day of praise, thanksgiving, and remembrance of the love and grace of Jesus Christ through worship and prayer.',
-    imageUrl: '/images/ChurchMinistry.jpeg'
+    imageUrl: '/images/events/25th.jpeg'
   },
   {
     id: '3',
@@ -52,7 +52,7 @@ export const UPCOMING_EVENTS: Event[] = [
     time: 'TBA',
     location: 'Shalem Ministries',
     description: 'An evening of prayer, reflection, and worship as we thank God for the past year and seek His guidance for the year ahead.',
-    imageUrl: '/images/PastorMinistry.jpeg'
+    imageUrl: '/images/events/31st_night.jpeg'
   },
   {
     id: '4',
@@ -61,7 +61,7 @@ export const UPCOMING_EVENTS: Event[] = [
     time: 'TBA',
     location: 'Shalem Ministries',
     description: "A blessed start to the new year with prayer, worship, and a message of hope, dedicating the year into God's hands.",
-    imageUrl: '/images/OrphanageHome.jpeg'
+    imageUrl: '/images/events/jan1st.jpeg'
   }
 ];
 
